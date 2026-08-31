@@ -1,0 +1,36 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "Bad.LOG",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "?{/[a-z]+\\.log/}",
+      "message": "",
+      "segments": [
+        "?{/[a-z]+\\.log/}"
+      ]
+    },
+    {
+      "level": "error",
+      "path": "Bad.LOG",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    }
+  ]
+}

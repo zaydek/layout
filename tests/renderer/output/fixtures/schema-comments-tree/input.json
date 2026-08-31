@@ -1,0 +1,11 @@
+{
+  "root": ".",
+  "items": [],
+  "layout": [
+    { "level": "ok", "path": "README.md", "message": "", "comment": "The public front door" },
+    { "level": "error", "path": "LICENSE", "message": "Required entry missing", "comment": "The license everyone looks for" },
+    { "level": "ok", "path": "?design", "message": "", "comment": "Kept local, never committed", "directory": true },
+    { "level": "ok", "path": "src", "message": "", "comment": "The engine", "directory": true },
+    { "level": "ok", "path": "src/{:module}.mjs", "message": "" }
+  ]
+}

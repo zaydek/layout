@@ -1,0 +1,5 @@
+$slug: /[a-z0-9-]+/
+
+root/                                  # The root project
+  {$slugg}.md                          # A typo in the reference
+  notes/                               # Anything else

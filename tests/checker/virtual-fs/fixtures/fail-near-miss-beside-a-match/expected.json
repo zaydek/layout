@@ -1,0 +1,39 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "xdir",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "xfile",
+      "message": "Expected a directory, found a file"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "{/x.*/}",
+      "message": "Expected a directory, found a file",
+      "segments": [
+        "{/x.*/}"
+      ],
+      "comment": "X directories",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{/x.*/}",
+      "message": "",
+      "segments": [
+        "{/x.*/}"
+      ],
+      "comment": "X directories",
+      "directory": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+layout.layout:1: a symlink's source names ONE entry, and "docs/" contains a / — nest the rule instead, two spaces per level

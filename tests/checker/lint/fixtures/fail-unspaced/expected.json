@@ -1,0 +1,11 @@
+{
+  "level": "WARN",
+  "findings": [
+    {
+      "level": "warn",
+      "line": 5,
+      "code": "layout/comment-unspaced",
+      "message": "A comment is `# ` (hash then a space)"
+    }
+  ]
+}

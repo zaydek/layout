@@ -1,0 +1,18 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "main.tsx",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "main.{ts,tsx}",
+      "message": ""
+    }
+  ]
+}

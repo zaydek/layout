@@ -1,0 +1,17 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 2,
+      "code": "layout/indent",
+      "message": "Indentation must use two-space steps (found 1)"
+    },
+    {
+      "level": "error",
+      "line": 3,
+      "code": "layout/indent",
+      "message": "Indentation must use two-space steps (found 3)"
+    }
+  ]
+}

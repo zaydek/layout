@@ -1,0 +1,1 @@
+layout.layout:2: "{a,}" has an empty value in its list — drop the stray comma

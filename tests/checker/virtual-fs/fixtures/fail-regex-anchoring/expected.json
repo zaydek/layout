@@ -1,0 +1,34 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "abc",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/a|ab/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/a|ab/}"
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "abc",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/a|ab/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/a|ab/}"
+      ]
+    }
+  ]
+}

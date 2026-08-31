@@ -1,0 +1,10 @@
+AGENTS.md
+CLAUDE.md -> AGENTS.md
+tools/
+  INDEX.md
+  topics/
+    {:topic}/
+      INDEX.md
+      {:slug}/
+        {:slug}.tool.md
+        {:slug}.tool.mjs

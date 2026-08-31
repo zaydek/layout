@@ -1,0 +1,37 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "alpha/alpha.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:slug;/[a-z]+/}",
+      "message": "",
+      "segments": [
+        "{:slug;/[a-z]+/}"
+      ],
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:slug;/[a-z]+/}/{:slug;/[a-z]+/}.md",
+      "message": "",
+      "segments": [
+        "{:slug;/[a-z]+/}",
+        "{:slug;/[a-z]+/}.md"
+      ]
+    }
+  ]
+}

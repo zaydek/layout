@@ -1,0 +1,3 @@
+root/                                  # The root project
+  ?.artifacts/                         # Optional; anything inside
+    {}

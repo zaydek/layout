@@ -1,0 +1,7 @@
+# Full-line comments are allowed.
+README.md # Inline comments are allowed.
+
+# Comments may appear between nested rules.
+code/
+  # Nested comment.
+  layout.mjs

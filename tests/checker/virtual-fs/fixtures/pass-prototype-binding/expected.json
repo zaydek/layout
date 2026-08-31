@@ -1,0 +1,30 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "alpha/alpha.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:__proto__}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:__proto__}/{:__proto__}.md",
+      "message": ""
+    }
+  ]
+}

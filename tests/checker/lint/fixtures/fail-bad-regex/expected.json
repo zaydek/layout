@@ -1,0 +1,11 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 2,
+      "code": "layout/bad-regex",
+      "message": "bad regex /[a-z/ in \"{/[a-z/}\": Invalid regular expression: /^(?:[a-z)$/: Unterminated character class"
+    }
+  ]
+}

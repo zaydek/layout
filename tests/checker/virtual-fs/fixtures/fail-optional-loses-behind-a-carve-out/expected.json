@@ -1,0 +1,60 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "beta",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "gamma",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{:b}",
+      "message": "Nothing left to match — \"beta\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "?{:b}",
+      "message": "Nothing left to match — \"beta\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "alpha/{}",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "{:a}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:a}/{}",
+      "message": ""
+    }
+  ]
+}

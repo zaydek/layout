@@ -1,0 +1,66 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/ab",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "objects/ab/NOT-A-DIGEST",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "objects/ab/{/[0-9a-f]{64}/}",
+      "message": "Required entry missing",
+      "segments": [
+        "objects",
+        "ab",
+        "{/[0-9a-f]{64}/}"
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/?{/[0-9a-f]{2}/}",
+      "message": "",
+      "segments": [
+        "objects",
+        "?{/[0-9a-f]{2}/}"
+      ],
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "objects/?{/[0-9a-f]{2}/}/{/[0-9a-f]{64}/}",
+      "message": "Required entry missing",
+      "segments": [
+        "objects",
+        "?{/[0-9a-f]{2}/}",
+        "{/[0-9a-f]{64}/}"
+      ]
+    },
+    {
+      "level": "error",
+      "path": "objects/ab/NOT-A-DIGEST",
+      "message": "Unexpected by layout"
+    }
+  ]
+}

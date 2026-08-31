@@ -1,0 +1,28 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "index.js",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "other.js",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "index.js",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "{}",
+      "message": ""
+    }
+  ]
+}

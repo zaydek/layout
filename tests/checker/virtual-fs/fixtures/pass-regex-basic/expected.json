@@ -1,0 +1,21 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "readme.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{/[a-z]+\\.md/}",
+      "message": "",
+      "segments": [
+        "{/[a-z]+\\.md/}"
+      ]
+    }
+  ]
+}

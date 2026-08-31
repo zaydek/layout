@@ -1,0 +1,35 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": ".cache",
+      "message": "Expected a directory, found a file"
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "?.cache",
+      "message": "Expected a directory, found a file",
+      "comment": "An optional cache directory",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "{}",
+      "message": ""
+    }
+  ]
+}

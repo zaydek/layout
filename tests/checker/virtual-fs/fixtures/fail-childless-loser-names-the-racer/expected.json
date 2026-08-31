@@ -1,0 +1,45 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "d",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "f",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{:b}",
+      "message": "Nothing left to match — \"f\" fits this rule and an earlier rule at this level claimed it"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "d",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "d/{}",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "{:a}",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{:b}",
+      "message": "Nothing left to match — \"f\" fits this rule and an earlier rule at this level claimed it"
+    }
+  ]
+}

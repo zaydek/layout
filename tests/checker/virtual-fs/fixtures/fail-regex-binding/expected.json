@@ -1,0 +1,47 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "alpha/alpha.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "alpha/beta.md",
+      "message": "Unexpected by layout"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "alpha/beta.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "ok",
+      "path": "{:slug;/[a-z]+/}",
+      "message": "",
+      "segments": [
+        "{:slug;/[a-z]+/}"
+      ],
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{:slug;/[a-z]+/}/{:slug;/[a-z]+/}.md",
+      "message": "Required entry missing",
+      "segments": [
+        "{:slug;/[a-z]+/}",
+        "{:slug;/[a-z]+/}.md"
+      ]
+    }
+  ]
+}

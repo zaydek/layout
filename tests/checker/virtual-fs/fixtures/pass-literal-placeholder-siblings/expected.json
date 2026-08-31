@@ -1,0 +1,96 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "stories",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/cli",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/cli/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "stories/cli/man-pages",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/cli/man-pages/man-pages.story.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "stories/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "stories/lib",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/lib/posters.mjs",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "stories",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "stories/lib",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/lib/{:module}.mjs",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "stories/{:topic}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/{:topic}/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "stories/{:topic}/{:slug}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "stories/{:topic}/{:slug}/{:slug}.story.md",
+      "message": ""
+    }
+  ]
+}

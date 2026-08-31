@@ -1,0 +1,37 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "2026-08-28",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "2026-08-28/note.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{/\\d{4}-\\d{2}-\\d{2}/}",
+      "message": "",
+      "segments": [
+        "{/\\d{4}-\\d{2}-\\d{2}/}"
+      ],
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{/\\d{4}-\\d{2}-\\d{2}/}/{}",
+      "message": "",
+      "segments": [
+        "{/\\d{4}-\\d{2}-\\d{2}/}",
+        "{}"
+      ]
+    }
+  ]
+}

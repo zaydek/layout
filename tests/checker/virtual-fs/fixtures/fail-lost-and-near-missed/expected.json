@@ -1,0 +1,43 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "d",
+      "message": "Expected a file, found a directory",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "f",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{/[df]/}",
+      "message": "Nothing left to match — \"f\" fits this rule and an earlier rule at this level claimed it",
+      "segments": [
+        "{/[df]/}"
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "{/[df]/}",
+      "message": "Nothing left to match — \"f\" fits this rule and an earlier rule at this level claimed it",
+      "segments": [
+        "{/[df]/}"
+      ]
+    },
+    {
+      "level": "ok",
+      "path": "{/f/}",
+      "message": "",
+      "segments": [
+        "{/f/}"
+      ]
+    }
+  ]
+}

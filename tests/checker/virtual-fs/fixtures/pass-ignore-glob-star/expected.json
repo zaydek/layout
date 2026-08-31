@@ -1,0 +1,69 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "a.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cache",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "cache/x",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "a.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cache",
+      "message": "",
+      "comment": "Cache",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "cache/x",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "comment": "Emptied by the glob",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/?keep.js",
+      "message": ""
+    }
+  ]
+}

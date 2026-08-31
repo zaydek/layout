@@ -1,0 +1,30 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "b",
+      "message": "Required symlink missing — \"b\" is here, but it is a file"
+    },
+    {
+      "level": "ok",
+      "path": "b",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "b",
+      "message": "Required symlink missing — \"b\" is here, but it is a file",
+      "comment": "Required link"
+    },
+    {
+      "level": "ok",
+      "path": "{:f}",
+      "message": "",
+      "comment": "Any file"
+    }
+  ]
+}

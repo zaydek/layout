@@ -1,0 +1,1 @@
+layout.layout:1: "a ->" is not a symlink rule — write "A -> B", one space each side

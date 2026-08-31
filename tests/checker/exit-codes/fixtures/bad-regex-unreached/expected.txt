@@ -1,0 +1,1 @@
+layout.layout:3: bad regex /[a-z/ in "{/[a-z/}": Invalid regular expression: /^(?:[a-z)$/: Unterminated character class

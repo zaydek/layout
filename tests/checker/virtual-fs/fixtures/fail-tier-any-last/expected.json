@@ -1,0 +1,54 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "dir",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "dir/other.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "dir/required.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "{:any}",
+      "message": "Nothing left to match — \"dir\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "?{d,dir}",
+      "message": "",
+      "comment": "Optional; complete if present",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "?{d,dir}/required.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "dir/other.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{:any}",
+      "message": "Nothing left to match — \"dir\" fits this rule and an earlier rule at this level claimed it",
+      "comment": "Any directory at all",
+      "directory": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "dir",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "dir/.txt",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "dir/anything.txt",
+      "message": "Unexpected by layout"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "dir/anything.txt",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "ok",
+      "path": "{:v;/[0-9]*/}dir",
+      "message": "",
+      "segments": [
+        "{:v;/[0-9]*/}dir"
+      ],
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{:v;/[0-9]*/}dir/{:v}.txt",
+      "message": "Required entry missing",
+      "segments": [
+        "{:v;/[0-9]*/}dir",
+        "{:v}.txt"
+      ]
+    }
+  ]
+}

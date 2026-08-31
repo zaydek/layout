@@ -1,0 +1,40 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "alpha/alpha.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "alpha/beta.md",
+      "message": "Unexpected by layout"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "alpha/beta.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "ok",
+      "path": "{:__proto__}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{:__proto__}/{:__proto__}.md",
+      "message": "Required entry missing"
+    }
+  ]
+}

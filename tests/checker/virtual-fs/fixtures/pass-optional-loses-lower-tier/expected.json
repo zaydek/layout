@@ -1,0 +1,36 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/x.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "?{:dir}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/{}",
+      "message": ""
+    }
+  ]
+}

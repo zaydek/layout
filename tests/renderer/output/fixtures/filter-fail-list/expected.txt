@@ -1,0 +1,1 @@
+✗ tools/scratch.mjs                         # Unexpected root executable

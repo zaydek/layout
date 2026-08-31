@@ -1,0 +1,18 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "INCIDENT_2026-08-28_kill-by-pattern.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{$incident}",
+      "message": ""
+    }
+  ]
+}

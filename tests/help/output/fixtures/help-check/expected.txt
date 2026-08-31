@@ -1,0 +1,51 @@
+layout check  compare a tree against its contract
+
+Walks the target, compares it against the contract, and prints one OK or ERROR
+finding per entry. Exits 1 if anything mismatched.
+
+The target is a directory, and the contract is the *.layout found in it —
+repo.layout by default, or whatever --config names.
+
+USAGE
+
+  layout check [path] [--config <path|->] [--ignore <glob>]
+               [--format <mode>] [--filter <list>] [--style <mode>]
+               [--as <view>] [--color <mode>]
+
+OPTIONS
+
+  --config <path|->   The contract to check against. `-` reads it from stdin.
+                      Default: repo.layout in <path>, or the only *.layout
+                      there. More than one, and none named repo.layout, is
+                      refused — name the one you mean.
+
+  --ignore <glob>     Skip paths matching <glob>: * within one path segment, **
+                      across segments, matched against a whole entry name or a
+                      whole path from the root. Comma-separated, repeatable.
+
+  --format <mode>     text (default) | json
+  --filter <list>     Severities, comma-separated. Default: ok,warn,error.
+  --style <mode>      tree (default) | list
+  --as <view>         schema (default) | actual
+  --color <mode>      auto (default) | on | off
+
+  A check has no warnings — a tree either matches a rule or does not — so there
+  is no --strict here. `layout lint` has one.
+
+EXAMPLES
+
+  Check this repo:
+  % layout .
+
+  Check a sibling repo against a contract that is not at its root:
+  % layout check ../other --config ../other/skills.layout
+
+  Try a contract from stdin without writing it down:
+  % cat draft.layout | layout check . --config -
+
+  Ignore two trees:
+  % layout . --ignore 'vendor/**' --ignore 'build/**'
+
+  Emit JSON for another tool:
+  % layout check . --format=json
+

@@ -1,0 +1,1 @@
+layout.layout:1: "a -> b -> c" has two " -> " arrows — a symlink rule names one source and one target

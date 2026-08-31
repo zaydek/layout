@@ -1,0 +1,7 @@
+✗ tools/
+└─ ✗ topics/
+   ├─ ! catalog/
+   │  └─ ! INDEX.md                         # Stale; missing diagnose-adapters
+   └─ ✗ layout/
+      └─ ✗ audit-layout/
+         └─ ✗ audit-layout.tool.mjs         # Required executable missing

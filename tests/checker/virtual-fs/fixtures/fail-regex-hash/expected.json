@@ -1,0 +1,35 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "axb.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/a#b\\.md/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/a#b\\.md/}"
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "axb.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/a#b\\.md/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/a#b\\.md/}"
+      ],
+      "comment": "A hash inside a regex"
+    }
+  ]
+}

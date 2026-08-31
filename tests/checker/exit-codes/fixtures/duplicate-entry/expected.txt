@@ -1,0 +1,1 @@
+layout.layout:2: "a.md" is already named on line 1 — two rules at one level cannot name the same entry

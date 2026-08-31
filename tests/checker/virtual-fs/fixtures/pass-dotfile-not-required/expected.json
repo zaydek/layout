@@ -1,0 +1,18 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "a.ts",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:route}.ts",
+      "message": ""
+    }
+  ]
+}

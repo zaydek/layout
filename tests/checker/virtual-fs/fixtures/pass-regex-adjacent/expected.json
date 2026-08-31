@@ -1,0 +1,21 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "ab0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcd",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{/[0-9a-f]{2}/}{/[0-9a-f]{62}/}",
+      "message": "",
+      "segments": [
+        "{/[0-9a-f]{2}/}{/[0-9a-f]{62}/}"
+      ]
+    }
+  ]
+}

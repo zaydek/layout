@@ -1,0 +1,74 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "a.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cache",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "cache/x",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/lib.js",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "a.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cache",
+      "message": "",
+      "comment": "Cache",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "cache/x",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "comment": "Vendored",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/lib.js",
+      "message": ""
+    }
+  ]
+}

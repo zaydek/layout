@@ -1,0 +1,42 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/ab",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/ab/0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/?{$fanout}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/?{$fanout}/{$digest}",
+      "message": ""
+    }
+  ]
+}

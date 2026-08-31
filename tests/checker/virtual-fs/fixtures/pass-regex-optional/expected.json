@@ -1,0 +1,26 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "?{/[a-z]+\\.log/}",
+      "message": "",
+      "segments": [
+        "?{/[a-z]+\\.log/}"
+      ]
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    }
+  ]
+}

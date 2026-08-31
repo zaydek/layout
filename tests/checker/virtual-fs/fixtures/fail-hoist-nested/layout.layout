@@ -1,0 +1,5 @@
+$date:     /\d{4}-\d{2}-\d{2}/
+$slug:     /[a-z0-9.-]+/
+$incident: /INCIDENT_{$date}_{$slug}\.md/
+
+{$incident}

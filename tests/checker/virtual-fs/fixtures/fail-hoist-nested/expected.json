@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "INCIDENT_2026-08-28_KILL.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{$incident}",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "INCIDENT_2026-08-28_KILL.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{$incident}",
+      "message": "Required entry missing"
+    }
+  ]
+}

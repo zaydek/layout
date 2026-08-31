@@ -1,0 +1,68 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "foo",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "foo/bar",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "foo/foo",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "foo/foo/must-exist.md",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:s}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:s}/?{:s}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{:s}/?{:s}/must-exist.md",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "ok",
+      "path": "{:s}/{/[a-z]+/}",
+      "message": "",
+      "segments": [
+        "{:s}",
+        "{/[a-z]+/}"
+      ],
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:s}/{/[a-z]+/}/{}",
+      "message": "",
+      "segments": [
+        "{:s}",
+        "{/[a-z]+/}",
+        "{}"
+      ]
+    }
+  ]
+}

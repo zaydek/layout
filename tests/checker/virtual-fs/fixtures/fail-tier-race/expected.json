@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "b.md",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{b,c}.md",
+      "message": "Nothing left to match — \"b.md\" fits this rule and an earlier rule at this level claimed it"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{a,b}.md",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{b,c}.md",
+      "message": "Nothing left to match — \"b.md\" fits this rule and an earlier rule at this level claimed it"
+    }
+  ]
+}

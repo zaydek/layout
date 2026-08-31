@@ -1,0 +1,52 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "alpha",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "alpha/x.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{:b}",
+      "message": "Nothing left to match — \"alpha\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "?{:b}",
+      "message": "Nothing left to match — \"alpha\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "keep.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "{:a}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:a}/{}",
+      "message": ""
+    }
+  ]
+}

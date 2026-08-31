@@ -1,0 +1,18 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "abbc",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{a,ab}{bc,c}",
+      "message": ""
+    }
+  ]
+}

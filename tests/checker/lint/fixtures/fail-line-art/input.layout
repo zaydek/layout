@@ -1,0 +1,3 @@
+root/                                  # The root project
+├── README.md
+└── src/                               # Source code

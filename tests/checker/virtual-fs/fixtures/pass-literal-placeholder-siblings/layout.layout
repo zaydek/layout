@@ -1,0 +1,8 @@
+stories/
+  INDEX.md
+  lib/
+    {:module}.mjs
+  {:topic}/
+    INDEX.md
+    {:slug}/
+      {:slug}.story.md

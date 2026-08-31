@@ -1,0 +1,49 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "2026-06-07",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "2026-06-07/todos",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "2026-06-07/todos/example",
+      "message": "",
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{$date}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{$date}/{:topic;ideas,todos}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{$date}/{:topic;ideas,todos}/{:slug}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{$date}/{:topic;ideas,todos}/{:slug}/{}",
+      "message": ""
+    }
+  ]
+}

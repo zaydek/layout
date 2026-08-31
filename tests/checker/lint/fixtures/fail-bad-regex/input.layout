@@ -1,0 +1,3 @@
+root/                                  # The root project
+  {/[a-z/}                             # A regex that does not compile
+  notes/                               # Anything else

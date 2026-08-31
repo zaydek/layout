@@ -1,0 +1,15 @@
+{
+  "root": ".",
+  "items": [
+    {
+      "level": "warn",
+      "path": "tools/topics/catalog/INDEX.md",
+      "message": "Stale; missing diagnose-adapters"
+    },
+    {
+      "level": "error",
+      "path": "tools/scratch.mjs",
+      "message": "Unexpected root executable"
+    }
+  ]
+}

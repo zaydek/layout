@@ -1,0 +1,2 @@
+foo                                    # A file rule with children
+  bar.md

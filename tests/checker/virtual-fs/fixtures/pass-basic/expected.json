@@ -1,0 +1,116 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "AGENTS.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "CLAUDE.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/catalog",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/catalog/check-catalog",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/catalog/check-catalog/check-catalog.tool.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/catalog/check-catalog/check-catalog.tool.mjs",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/catalog/INDEX.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "AGENTS.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "CLAUDE.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/{:topic}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/{:topic}/INDEX.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/{:topic}/{:slug}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/{:topic}/{:slug}/{:slug}.tool.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "tools/topics/{:topic}/{:slug}/{:slug}.tool.mjs",
+      "message": ""
+    }
+  ]
+}

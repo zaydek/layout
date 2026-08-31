@@ -1,0 +1,11 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 2,
+      "code": "layout/indent",
+      "message": "Indentation must use spaces \u2014 a tab is not a level"
+    }
+  ]
+}

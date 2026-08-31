@@ -1,0 +1,21 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "日本語",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{/\\p{L}+/}",
+      "message": "",
+      "segments": [
+        "{/\\p{L}+/}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+src/                                   # Code
+  {$slug}.mjs
+$slug: /[a-z]+/

@@ -1,0 +1,1 @@
+layout.layout:1: "{:n:kebab-case}" has no rule after the colon — there are no case rules; write the shape as a regex, e.g. {:n;/[a-z0-9-]+/}

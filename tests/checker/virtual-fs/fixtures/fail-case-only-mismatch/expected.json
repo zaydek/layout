@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "README.md",
+      "message": "Required entry missing — \"readme.md\" differs only in case"
+    },
+    {
+      "level": "error",
+      "path": "readme.md",
+      "message": "Unexpected by layout"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "README.md",
+      "message": "Required entry missing — \"readme.md\" differs only in case"
+    },
+    {
+      "level": "error",
+      "path": "readme.md",
+      "message": "Unexpected by layout"
+    }
+  ]
+}

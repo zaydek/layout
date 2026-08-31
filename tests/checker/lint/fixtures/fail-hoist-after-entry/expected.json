@@ -1,0 +1,11 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 3,
+      "code": "layout/slot-syntax",
+      "message": "\"$slug:\" must come before the first entry"
+    }
+  ]
+}

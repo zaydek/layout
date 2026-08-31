@@ -1,0 +1,34 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "a{b}.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "a{c}.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "a\\{b\\}.md",
+      "message": "",
+      "segments": [
+        "a\\{b\\}.md"
+      ]
+    },
+    {
+      "level": "ok",
+      "path": "{/a.[bc]..md/}",
+      "message": "",
+      "segments": [
+        "{/a.[bc]..md/}"
+      ]
+    }
+  ]
+}

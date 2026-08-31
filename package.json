@@ -1,0 +1,25 @@
+{
+  "name": "layout",
+  "version": "0.1.0",
+  "description": "Write your repo's shape down as an executable contract, and check the working tree against it",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaydek/layout.git"
+  },
+  "bin": {
+    "layout": "src/layout.mjs"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "snapshot": "node tests/snapshot.mjs",
+    "test": "node tests/run.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

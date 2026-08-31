@@ -1,0 +1,11 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 3,
+      "code": "layout/slot-syntax",
+      "message": "\"{}\" takes no children \u2014 it already means \"anything below here\""
+    }
+  ]
+}

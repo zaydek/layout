@@ -1,0 +1,26 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "docs",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "?docs",
+      "message": "",
+      "comment": "Optional docs directory",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:f}",
+      "message": "",
+      "comment": "Any file"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+✗ objects/
+├─ ✗ ?{/[0-9a-f]{2}/}/
+│  └─ ✗ {/[0-9a-f]{64}/}                    # Required entry missing
+└─ ✗ ab/
+   └─ ✗ NOT-A-DIGEST                        # Unexpected by layout

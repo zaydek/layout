@@ -1,0 +1,1 @@
+layout.layout:1: "{/a\-b/}" does not compile to a valid regex — ^(?:(?:a\-b))$: Invalid regular expression: /^(?<_s0>(?:a\-b))$/u: Invalid escape

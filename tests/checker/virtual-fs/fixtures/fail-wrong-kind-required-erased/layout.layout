@@ -1,0 +1,3 @@
+lib/                                   # One concern per module
+  {}
+{}

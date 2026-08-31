@@ -1,0 +1,37 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "7dir",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "7dir/7.txt",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:v;/[0-9]*/}dir",
+      "message": "",
+      "segments": [
+        "{:v;/[0-9]*/}dir"
+      ],
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:v;/[0-9]*/}dir/{:v}.txt",
+      "message": "",
+      "segments": [
+        "{:v;/[0-9]*/}dir",
+        "{:v}.txt"
+      ]
+    }
+  ]
+}

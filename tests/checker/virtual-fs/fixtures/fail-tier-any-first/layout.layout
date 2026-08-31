@@ -1,0 +1,3 @@
+{:any}/                                # Any directory at all
+?{d,dir}/                              # Optional; complete if present
+  required.md

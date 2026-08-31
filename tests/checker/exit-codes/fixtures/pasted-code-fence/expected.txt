@@ -1,0 +1,1 @@
+layout.layout:2: "```" is rendered output or Markdown, not contract source — a contract indents with two spaces per level

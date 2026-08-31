@@ -1,0 +1,52 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/ab",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "objects/ab/NOT-A-DIGEST",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "objects/ab/{$digest}",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/?{$fanout}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "objects/?{$fanout}/{$digest}",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "objects/ab/NOT-A-DIGEST",
+      "message": "Unexpected by layout"
+    }
+  ]
+}

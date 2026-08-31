@@ -1,0 +1,11 @@
+{
+  "level": "WARN",
+  "findings": [
+    {
+      "level": "warn",
+      "line": 3,
+      "code": "layout/comment-align",
+      "message": "Comment \"#\" should be at column 40 (is 38)"
+    }
+  ]
+}

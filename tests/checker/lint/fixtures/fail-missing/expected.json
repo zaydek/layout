@@ -1,0 +1,11 @@
+{
+  "level": "WARN",
+  "findings": [
+    {
+      "level": "warn",
+      "line": 3,
+      "code": "layout/comment-missing",
+      "message": "Directory \"src/\" should carry a trailing # comment"
+    }
+  ]
+}

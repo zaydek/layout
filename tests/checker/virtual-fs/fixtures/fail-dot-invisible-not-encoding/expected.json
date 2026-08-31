@@ -1,0 +1,18 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "{:route}.ts",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "{:route}.ts",
+      "message": "Required entry missing"
+    }
+  ]
+}

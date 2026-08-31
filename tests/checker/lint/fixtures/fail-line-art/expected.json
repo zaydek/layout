@@ -1,0 +1,17 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 2,
+      "code": "layout/indent",
+      "message": "Rendered output or Markdown, not contract source — a contract indents with two spaces per level"
+    },
+    {
+      "level": "error",
+      "line": 3,
+      "code": "layout/indent",
+      "message": "Rendered output or Markdown, not contract source — a contract indents with two spaces per level"
+    }
+  ]
+}

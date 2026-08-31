@@ -1,0 +1,63 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "a.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "cache",
+      "message": "Unexpected by layout",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/lib.js",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "a.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "cache",
+      "message": "Unexpected by layout",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor",
+      "message": "",
+      "comment": "Vendored",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "vendor/lib.js",
+      "message": ""
+    }
+  ]
+}

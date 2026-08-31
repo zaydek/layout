@@ -1,0 +1,5 @@
+✓ README.md                                 # The public front door
+✗ LICENSE                                   # Required entry missing
+✓ ?design/                                  # Kept local, never committed
+✓ src/                                      # The engine
+└─ ✓ {:module}.mjs

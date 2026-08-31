@@ -1,0 +1,18 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "INCIDENT_2026-08-28.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "INCIDENT_{$date}.md",
+      "message": ""
+    }
+  ]
+}

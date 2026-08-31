@@ -1,0 +1,31 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": ".foo",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{:y}",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:x;/\\..+/}",
+      "message": "",
+      "segments": [
+        "{:x;/\\..+/}"
+      ]
+    },
+    {
+      "level": "error",
+      "path": "{:y}",
+      "message": "Required entry missing"
+    }
+  ]
+}

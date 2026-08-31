@@ -1,0 +1,21 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "🎉🎉",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{/🎉+/}",
+      "message": "",
+      "segments": [
+        "{/🎉+/}"
+      ]
+    }
+  ]
+}

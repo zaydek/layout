@@ -1,0 +1,51 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "a.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cache",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "cache/x",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "a.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cach",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "cache",
+      "message": "",
+      "comment": "Cache",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "cache/x",
+      "message": ""
+    }
+  ]
+}

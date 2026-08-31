@@ -1,0 +1,5 @@
+root/                                  # The root project
+  README.md
+  src/                               # Source code
+    index.ts                           # Entry point
+  tests/                               # Test suite

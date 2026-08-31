@@ -1,0 +1,2 @@
+b -> a                                 # Required link
+{:f}                                   # Any file

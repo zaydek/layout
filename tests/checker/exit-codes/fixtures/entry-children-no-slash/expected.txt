@@ -1,0 +1,1 @@
+layout.layout:2: "foo" takes children, so it names a directory — write "foo/"

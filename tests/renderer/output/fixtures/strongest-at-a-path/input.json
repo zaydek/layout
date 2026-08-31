@@ -1,0 +1,8 @@
+{
+  "root": ".",
+  "items": [
+    { "level": "ok", "path": "src/a.mjs", "message": "" },
+    { "level": "warn", "path": "src/a.mjs", "message": "Verify this" },
+    { "level": "ok", "path": "src/b.mjs", "message": "" }
+  ]
+}

@@ -1,0 +1,1 @@
+layout.layout:2: unclosed "{" in "{:name" — a slot is {…}; nothing closes this one

@@ -1,0 +1,42 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "d",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "d/placeholder.md",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "{:b}",
+      "message": "Nothing left to match — \"d\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "?{:b}",
+      "message": "Nothing left to match — \"d\" fits this rule and an earlier rule at this level claimed it",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:a}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{:a}/{}",
+      "message": ""
+    }
+  ]
+}

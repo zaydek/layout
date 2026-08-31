@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "WRONG",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{a,b}",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "WRONG",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{a,b}",
+      "message": "Required entry missing"
+    }
+  ]
+}

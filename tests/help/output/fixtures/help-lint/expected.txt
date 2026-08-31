@@ -1,0 +1,61 @@
+layout lint  check a .layout file's own syntax and style
+
+Reads a contract and reports what is wrong with the contract itself — before it
+is ever pointed at a tree. A contract that does not resolve makes `check` exit 2
+with one message; lint names them all at once, with line numbers.
+
+The exception is indentation: a file whose nesting cannot be read has no shape to
+report faults against, so `layout/indent` is named on every bad line and nothing
+structural is checked until you fix it. Run lint again after.
+
+USAGE
+
+  layout lint <file|-> [--format <mode>] [--strict]
+
+RULES
+
+  Errors — the contract cannot be used as written:
+
+    layout/indent          An indent that is not exactly two spaces per level,
+                           a tab, or text pasted out of a document — the line
+                           art this tool draws, or a Markdown fence.
+    layout/empty           A contract with no rules at all, which forbids
+                           everything — usually a pipeline that fed in nothing.
+    layout/bad-regex       A slot regex that does not compile.
+    layout/unknown-ref     A {$name} with no $name: definition.
+    layout/ref-cycle       $a -> $b -> $a.
+    layout/slot-syntax     Any other rule the grammar rejects. A rule names ONE
+                           entry, so a / in one is a path written on a single
+                           line — nest it instead. A rule that names nothing,
+                           the same rule twice, two rules naming one entry, two
+                           outlets at one level: each is a line that can never
+                           match. Also a malformed symlink, and children under
+                           something that is not a directory.
+
+  Warnings — house style, so a contract stays readable:
+
+    layout/comment-missing    A directory entry with no trailing comment.
+    layout/comment-align      A comment's # off the alignment column, which is
+                              three past the longest commented line and never
+                              left of column 40. `layout render <file>` reprints
+                              a contract with every comment already on it.
+    layout/comment-caps       A comment not led by an uppercase letter.
+    layout/comment-unspaced   A # not followed by a space.
+    layout/unused-definition  A $name: no rule reaches, so it enforces nothing.
+
+OPTIONS
+
+  --format <mode>     text (default) | json
+  --strict            Exit 1 on a warning too, not just an error.
+
+EXAMPLES
+
+  Lint this repo's contract:
+  % layout lint repo.layout
+
+  Lint a draft on its way in:
+  % cat draft.layout | layout lint -
+
+  Fail a pre-commit hook on style, not just on breakage:
+  % layout lint repo.layout --strict
+

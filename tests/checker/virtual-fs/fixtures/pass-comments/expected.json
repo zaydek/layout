@@ -1,0 +1,41 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "code",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "code/layout.mjs",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "README.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "code",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "code/layout.mjs",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "README.md",
+      "message": "",
+      "comment": "Inline comments are allowed."
+    }
+  ]
+}

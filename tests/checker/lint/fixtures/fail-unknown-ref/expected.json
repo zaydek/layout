@@ -1,0 +1,17 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "warn",
+      "line": 1,
+      "code": "layout/unused-definition",
+      "message": "\"$slug:\" is defined and no rule uses it"
+    },
+    {
+      "level": "error",
+      "line": 4,
+      "code": "layout/unknown-ref",
+      "message": "unknown pattern reference \"{$slugg}\" — this contract has no \"$slugg:\" definition"
+    }
+  ]
+}

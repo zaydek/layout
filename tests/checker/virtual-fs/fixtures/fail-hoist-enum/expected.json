@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "main.js",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "main.{$ext}",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "main.js",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "main.{$ext}",
+      "message": "Required entry missing"
+    }
+  ]
+}

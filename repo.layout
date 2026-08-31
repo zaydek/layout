@@ -1,0 +1,33 @@
+# Contract for layout — the tool that checks a tree against a file like this one.
+# `layout .` checks this repo against it; `checker/self` keeps it green in CI.
+#
+# This is a contract, not a directory listing. A directory whose membership grows
+# (lib modules, test suites) carries a slot; a fixed set is spelled out, so a new
+# member there costs a deliberate line.
+
+AGENTS.md                              # Repo doctrine — an agent reads this first
+CLAUDE.md -> AGENTS.md                 # Symlink: one source of truth, many harnesses
+README.md                              # The public front door
+LICENSE
+package.json                           # The bin, the test gate, and what an install ships
+?package-lock.json                     # Written by `npm install`; layout needs none
+.gitignore
+.github/                               # CI only: the test gate, run on push and PR
+  workflows/                           # One workflow; there is nothing else to automate
+    test.yml
+repo.layout                            # This file. `layout .` checks the repo against it
+
+src/                                   # The engine
+  layout.mjs                           # CLI entry: check / lint / render / help
+  lib/                                 # One concern per module; no barrel file
+    {:module}.mjs
+
+tests/                                 # The oracle — every suite is a directory
+  run.mjs                              # The gate: discovers and runs every suite below
+  snapshot.mjs                         # Writes one fixture's expected.json, by name
+  {:topic}/                            # Surface under test: checker, renderer, help…
+    {:slug}/                           # One case; :slug must bind across all three
+      {:slug}.test.md                  # What the suite proves, in prose
+      {:slug}.test.mjs                 # The executable assertion
+      ?fixtures/                       # Optional; a directory so it stays auditable
+        {}

@@ -1,0 +1,51 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/ab",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/ab/0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "objects",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/?{/[0-9a-f]{2}/}",
+      "message": "",
+      "segments": [
+        "objects",
+        "?{/[0-9a-f]{2}/}"
+      ],
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "objects/?{/[0-9a-f]{2}/}/{/[0-9a-f]{64}/}",
+      "message": "",
+      "segments": [
+        "objects",
+        "?{/[0-9a-f]{2}/}",
+        "{/[0-9a-f]{64}/}"
+      ]
+    }
+  ]
+}

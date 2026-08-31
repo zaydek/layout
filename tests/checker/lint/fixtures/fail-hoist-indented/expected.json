@@ -1,0 +1,17 @@
+{
+  "level": "ERROR",
+  "findings": [
+    {
+      "level": "error",
+      "line": 2,
+      "code": "layout/slot-syntax",
+      "message": "\"$slug:\" must sit at the left margin, above the entries"
+    },
+    {
+      "level": "warn",
+      "line": 2,
+      "code": "layout/unused-definition",
+      "message": "\"$slug:\" is defined and no rule uses it"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+layout  filesystem shape contracts, checked
+
+A .layout file states the shape a tree is supposed to have — which files and
+folders exist, where, and what they may be named — and layout proves the tree
+still matches it.
+
+USAGE
+
+  layout                    This page
+  layout .                  Check the current directory
+  layout <path>             Check that directory
+  layout check [path]       The same, with the command named outright
+  layout lint <file>        Check a .layout file's own syntax and style
+  layout render [file]      Print a contract, or draw findings JSON
+  layout help [command]     This page, or one command's page
+
+OPTIONS
+
+  --config <path|->   The contract to check against. `-` reads it from stdin.
+                      Default: repo.layout in <path>, or the only *.layout
+                      there. More than one, and none named repo.layout, is
+                      refused — name the one you mean.
+
+  --ignore <glob>     Skip paths matching <glob>: * within one path segment, **
+                      across segments, matched against a whole entry name or a
+                      whole path from the root. Comma-separated, repeatable.
+
+  --format <mode>     text (default) | json
+
+  --filter <list>     Severities, comma-separated. Default: ok,warn,error.
+
+  --style <mode>      tree (default) | list
+
+  --as <view>         schema (default) | actual — print the contract's own slot
+                      spellings, or the paths they matched. A missing entry has
+                      no path, so actual draws its rule.
+
+  --color <mode>      auto (default) | on | off
+
+  --strict            lint, render: exit 1 on a warning, not just an error.
+
+  --example <name>    render only: draw a built-in findings example. One name,
+                      stress.
+
+  -h, --help          Print a help page.
+  -V, --version       Print the version.
+
+EXIT CODES
+
+  0   The tree matches the contract.
+  1   It does not, or lint/render found a warning under --strict.
+  2   The contract could not be resolved, or the command was not understood.
+
+EXAMPLES
+
+  Check this repo against its own contract:
+  % layout .
+
+  Try a contract before committing it:
+  % layout check . --config draft.layout
+
+  Check a .layout file's own syntax:
+  % layout lint repo.layout
+
+  Show only what is wrong, in color:
+  % layout . --filter=error --color=on
+
+  Pipe another tool's path findings through the renderer:
+  % my-tool --json | layout render --filter=error
+
+ENVIRONMENT
+
+  NO_COLOR    Disable ANSI color.
+

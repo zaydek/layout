@@ -1,0 +1,9 @@
+{
+  "root": ".",
+  "layout": [
+    { "level": "ok", "path": "src" },
+    { "level": "ok", "path": "src/{:module}.mjs" },
+    { "level": "warn", "path": "src/?optional.mjs", "message": "Check this one" },
+    { "level": "error", "path": "tests/{:slug;a,b}.test.mjs", "message": "Required entry missing" }
+  ]
+}

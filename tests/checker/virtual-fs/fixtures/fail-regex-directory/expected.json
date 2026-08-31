@@ -1,0 +1,22 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "stuff",
+      "message": "Expected a directory, found a file"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "{/[a-z]+/}",
+      "message": "Expected a directory, found a file",
+      "segments": [
+        "{/[a-z]+/}"
+      ],
+      "directory": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "parser.test.js",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{$unit}",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "parser.test.js",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{$unit}",
+      "message": "Required entry missing"
+    }
+  ]
+}

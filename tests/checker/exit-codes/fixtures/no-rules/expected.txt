@@ -1,0 +1,1 @@
+layout.layout: this contract has no rules, so it forbids everything — write an entry, or "{}" to allow anything

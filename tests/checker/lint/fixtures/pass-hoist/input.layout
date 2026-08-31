@@ -1,0 +1,6 @@
+$date: /\d{4}-\d{2}-\d{2}/
+$slug: /[a-z0-9-]+/
+
+root/                                  # The root project
+  INCIDENT_{$date}_{$slug}.md          # One incident record
+  notes/                               # Anything else

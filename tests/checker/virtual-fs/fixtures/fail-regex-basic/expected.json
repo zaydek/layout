@@ -1,0 +1,34 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "README.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/[a-z]+\\.md/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/[a-z]+\\.md/}"
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "README.md",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/[a-z]+\\.md/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/[a-z]+\\.md/}"
+      ]
+    }
+  ]
+}

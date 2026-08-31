@@ -1,0 +1,38 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "2026-8-28",
+      "message": "Unexpected by layout",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{/\\d{4}-\\d{2}-\\d{2}/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/\\d{4}-\\d{2}-\\d{2}/}"
+      ],
+      "directory": true
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "2026-8-28",
+      "message": "Unexpected by layout",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "{/\\d{4}-\\d{2}-\\d{2}/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/\\d{4}-\\d{2}-\\d{2}/}"
+      ],
+      "directory": true
+    }
+  ]
+}

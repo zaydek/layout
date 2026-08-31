@@ -1,0 +1,62 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "topics",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "topics/build",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "topics/build/build.tool.md",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "topics/build/build.tool.mjs",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "error",
+      "path": "topics/build/run.tool.mjs",
+      "message": "Unexpected by layout"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "topics",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "error",
+      "path": "topics/build/run.tool.mjs",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "ok",
+      "path": "topics/{:slug}",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "topics/{:slug}/{:slug}.tool.md",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "topics/{:slug}/{:slug}.tool.mjs",
+      "message": "Required entry missing"
+    }
+  ]
+}

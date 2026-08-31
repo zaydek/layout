@@ -1,0 +1,26 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": ".eslintrc",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": ".prettierrc",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{:rc;/\\.[a-z]+rc/}",
+      "message": "",
+      "segments": [
+        "{:rc;/\\.[a-z]+rc/}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "level": "WARN",
+  "findings": [
+    {
+      "level": "warn",
+      "line": 1,
+      "code": "layout/unused-definition",
+      "message": "\"$slug:\" is defined and no rule uses it"
+    }
+  ]
+}

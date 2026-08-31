@@ -1,0 +1,4 @@
+topics/
+  {:slug}/
+    {:slug}.tool.md
+    {:slug}.tool.mjs

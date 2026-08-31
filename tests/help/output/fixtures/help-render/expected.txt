@@ -1,0 +1,56 @@
+layout render  print a contract, or draw findings JSON
+
+With a .layout file, prints the contract as layout parsed it — the way to see
+what a slot actually resolved to, and the formatter for the alignment warning
+lint gives you. Blank lines and standalone # comments survive; running it twice
+changes nothing more. With path-addressed findings JSON on stdin, draws them as
+OK/WARN/ERROR trees, so any tool that can emit a path and a severity gets
+layout's output for free.
+
+The flags below shape a findings REPORT. Printing a contract takes none of them,
+and passing one there is refused rather than ignored.
+
+USAGE
+
+  layout render [file|-] [--format <mode>] [--filter <list>]
+                [--style <mode>] [--as <view>] [--color <mode>]
+                [--example <name>] [--strict]
+
+  With no argument and a pipe on stdin, render reads stdin. With no argument
+  and a terminal, it reads the contract check would — repo.layout, or the
+  only *.layout in the current directory.
+
+FINDINGS JSON
+
+  { "items": [ { "path": "src/index.ts", "level": "error",
+                 "message": "Unexpected by layout" } ] }
+
+  Anything on stdin that parses as JSON with an items array is drawn as
+  findings; anything else is read as a contract.
+
+OPTIONS
+
+  --format <mode>     text (default) | json
+  --filter <list>     Severities, comma-separated. Default: ok,warn,error.
+  --style <mode>      tree (default) | list
+  --as <view>         schema (default) | actual
+  --color <mode>      auto (default) | on | off
+  --example <name>    Draw a built-in example instead of reading input, and
+                      exit 0 whatever it draws — it reports on nothing. One
+                      name, stress.
+  --strict            Exit 1 on a warning in the findings, not just an error.
+
+EXAMPLES
+
+  Print this repo's contract as parsed:
+  % layout render repo.layout
+
+  Draw another tool's findings, errors only:
+  % my-tool --json | layout render --filter=error
+
+  Check and draw through layout's own pipeline:
+  % layout check . --format=json | layout render --filter=error
+
+  See what the renderer can do:
+  % layout render --example stress
+

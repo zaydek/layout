@@ -1,0 +1,1 @@
+layout.layout:1: "{:/[A-Z]+/}" is not a binding — a name is a word. Write "{/[A-Z]+/}" to match that shape, or "{:name;/[A-Z]+/}" to bind it.

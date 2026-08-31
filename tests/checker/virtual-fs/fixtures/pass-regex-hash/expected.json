@@ -1,0 +1,22 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "a#b.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "{/a#b\\.md/}",
+      "message": "",
+      "segments": [
+        "{/a#b\\.md/}"
+      ],
+      "comment": "A hash inside a regex"
+    }
+  ]
+}

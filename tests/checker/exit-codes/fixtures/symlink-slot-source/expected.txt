@@ -1,0 +1,1 @@
+layout.layout:1: a symlink's source is a literal name, not a pattern — "{:x}" carries a slot

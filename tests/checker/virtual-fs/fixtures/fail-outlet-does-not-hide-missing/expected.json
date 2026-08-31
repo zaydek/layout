@@ -1,0 +1,28 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "index.js",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "ok",
+      "path": "other.js",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "index.js",
+      "message": "Required entry missing"
+    },
+    {
+      "level": "ok",
+      "path": "{}",
+      "message": ""
+    }
+  ]
+}

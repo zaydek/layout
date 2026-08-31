@@ -1,0 +1,1 @@
+layout.layout:3: "{:n}.md" repeats the rule on line 2 — the first claims everything they both match, so this one can never match

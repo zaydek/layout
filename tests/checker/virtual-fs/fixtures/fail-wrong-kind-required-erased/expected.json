@@ -1,0 +1,31 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "lib",
+      "message": "Required entry missing — \"lib\" is here, but it is a file",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "lib",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "lib",
+      "message": "Required entry missing — \"lib\" is here, but it is a file",
+      "comment": "One concern per module",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "{}",
+      "message": ""
+    }
+  ]
+}

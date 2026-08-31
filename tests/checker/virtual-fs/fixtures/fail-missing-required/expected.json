@@ -1,0 +1,40 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "code",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "code/layout.mjs",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "README.md",
+      "message": "Required entry missing"
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "code",
+      "message": "",
+      "directory": true
+    },
+    {
+      "level": "ok",
+      "path": "code/layout.mjs",
+      "message": ""
+    },
+    {
+      "level": "error",
+      "path": "README.md",
+      "message": "Required entry missing"
+    }
+  ]
+}

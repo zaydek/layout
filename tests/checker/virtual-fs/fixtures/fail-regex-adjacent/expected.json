@@ -1,0 +1,34 @@
+{
+  "level": "ERROR",
+  "root": ".",
+  "items": [
+    {
+      "level": "error",
+      "path": "ab0123456789abcdef0123456789abcdef0123456789abcdef0123456789abc",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/[0-9a-f]{2}/}{/[0-9a-f]{62}/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/[0-9a-f]{2}/}{/[0-9a-f]{62}/}"
+      ]
+    }
+  ],
+  "layout": [
+    {
+      "level": "error",
+      "path": "ab0123456789abcdef0123456789abcdef0123456789abcdef0123456789abc",
+      "message": "Unexpected by layout"
+    },
+    {
+      "level": "error",
+      "path": "{/[0-9a-f]{2}/}{/[0-9a-f]{62}/}",
+      "message": "Required entry missing",
+      "segments": [
+        "{/[0-9a-f]{2}/}{/[0-9a-f]{62}/}"
+      ]
+    }
+  ]
+}

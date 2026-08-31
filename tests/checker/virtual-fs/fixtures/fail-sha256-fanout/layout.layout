@@ -1,0 +1,6 @@
+$fanout: /[0-9a-f]{2}/
+$digest: /[0-9a-f]{64}/
+
+objects/
+  ?{$fanout}/
+    {$digest}

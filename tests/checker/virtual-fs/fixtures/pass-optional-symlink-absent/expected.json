@@ -1,0 +1,23 @@
+{
+  "level": "OK",
+  "root": ".",
+  "items": [
+    {
+      "level": "ok",
+      "path": "AGENTS.md",
+      "message": ""
+    }
+  ],
+  "layout": [
+    {
+      "level": "ok",
+      "path": "?CLAUDE.md",
+      "message": ""
+    },
+    {
+      "level": "ok",
+      "path": "AGENTS.md",
+      "message": ""
+    }
+  ]
+}

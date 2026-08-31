@@ -1,0 +1,1 @@
+layout.layout:2: value "{$a}" in $b carries a slot — a value list is literal text. Write a regex, e.g. {/(a|…)/}, or hoist the alternatives into one list.

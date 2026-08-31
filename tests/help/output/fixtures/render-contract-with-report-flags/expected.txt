@@ -1,0 +1,1 @@
+render prints a contract as written; --format belongs to a findings report and does nothing here. Drop it, or pass findings JSON.

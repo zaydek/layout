@@ -1,0 +1,4 @@
+$ext:  ts,tsx
+$unit: /[a-z]+\.test\.{$ext}/
+
+{$unit}
