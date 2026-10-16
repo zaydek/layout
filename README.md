@@ -51,7 +51,29 @@ docs -> ../docs                        # A symlink
 
 ## Example
 
-<img src="skills/layout/examples/react-dark.svg" alt="skills/layout/examples/react.layout, highlighted">
+From `skills/layout/examples/react.layout`:
+
+```text
+# A React app: one file per component and hook, each test beside its module.
+
+$component: [A-Z][a-zA-Z0-9]*
+$hook:      use[A-Z][a-zA-Z0-9]*
+$code:      <=400
+
+README.md                              # One: a plain name is exactly one file
+package.json
+repo.layout                            # This contract
+?CHANGELOG.md                          # ? marks an entry optional
+src/                                   # The app
+  main.tsx
+  components/                          # One file per component
+    $component.tsx $code               # Many: a pattern matches any number
+    ?$component.test.tsx               # An optional test beside it
+  hooks/                               # One file per hook
+    $hook.ts $code                     # A hoisted cap
+public/                                # Static files
+  {}                                   # Anything goes here
+```
 
 ## Commands
 
