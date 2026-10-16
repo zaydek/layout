@@ -28,21 +28,23 @@ supported.
 ## Grammar
 
 ```text
+# Names: a regex or a cap, used below as $name
 $component: [A-Z][a-zA-Z0-9]*
 $hook:      use[A-Z][a-zA-Z0-9]*
 $code:      <=400
 
+# The tree: every entry this repo may hold
 README.md                              # One: a plain name is exactly one file
 package.json
 ?CHANGELOG.md                          # ? marks an entry optional
-src/
+src/                                   # The app
   main.tsx
-  components/
+  components/                          # One component per file
     $component.tsx $code               # Many: a pattern matches any number
-    ?$component.test.tsx               # An optional test beside it        
-  hooks/
+    ?$component.test.tsx               # An optional test beside it
+  hooks/                               # One hook per file
     $hook.ts $code                     # A hoisted cap
-public/
+public/                                # Static files, served as is
   {}                                   # Anything goes here
 docs -> ../docs                        # A symlink
 ```
