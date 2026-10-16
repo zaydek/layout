@@ -117,22 +117,23 @@ src/                                   <span class="t-comment"># One module per 
 </ul>
 
 <h2>Grammar</h2>
-<pre><code><span class="t-hoist">$kind</span><span class="t-op">:</span>    user<span class="t-op">|</span>feedback<span class="t-op">|</span>project<span class="t-op">|</span>reference<span class="t-op">|</span>threads<span class="t-op">|</span>idea
-<span class="t-hoist">$project</span><span class="t-op">:</span> z<span class="t-op">|</span>life<span class="t-op">|</span>annotate<span class="t-op">|</span>chippy
-<span class="t-hoist">$slug</span><span class="t-op">:</span>    [a-z0-9]+(-[a-z0-9]+)*
-<span class="t-hoist">$date</span><span class="t-op">:</span>    \d{4}-\d{2}-\d{2}
-<span class="t-hoist">$memory</span><span class="t-op">:</span>  <span class="t-var">{$kind}</span>_<span class="t-var">{$project}</span>_<span class="t-var">{$slug}</span>_<span class="t-var">{$date}</span>
-<span class="t-hoist">$code</span><span class="t-op">:</span>    <span class="t-cap">&lt;=2,000</span>
+<pre><code><span class="t-hoist">$component</span><span class="t-op">:</span> [A-Z][a-zA-Z0-9]*
+<span class="t-hoist">$hook</span><span class="t-op">:</span>      use[A-Z][a-zA-Z0-9]*
+<span class="t-hoist">$code</span><span class="t-op">:</span>      <span class="t-cap">&lt;=400</span>
 
-memories/
-  <span class="t-op">?</span>.archive/
-    <span class="t-op">{}</span>                                   <span class="t-comment"># Anything goes here</span>
-  <span class="t-var">$memory</span>.md                             <span class="t-comment"># Many: a pattern matches any number of files</span>
-  INDEX.md                               <span class="t-comment"># One: a plain name is exactly one file</span>
-  memory.md                              <span class="t-comment"># No cap given, so no cap</span>
+README.md                              <span class="t-comment"># One: a plain name is exactly one file</span>
+package.json
+<span class="t-op">?</span>CHANGELOG.md                          <span class="t-comment"># ? marks an entry optional</span>
 src/
-  <span class="t-var">$slug</span>.ts <span class="t-var">$code</span>                         <span class="t-comment"># A hoisted cap</span>
-docs <span class="t-op">-&gt;</span> ../docs                          <span class="t-comment"># A symlink</span></code></pre>
+  main.tsx
+  components/
+    <span class="t-var">$component</span>.tsx <span class="t-var">$code</span>               <span class="t-comment"># Many: a pattern matches any number</span>
+    <span class="t-op">?</span><span class="t-var">$component</span>.test.tsx               <span class="t-comment"># Same name, same text: its own test</span>
+  hooks/
+    <span class="t-var">$hook</span>.ts <span class="t-var">$code</span>                     <span class="t-comment"># A hoisted cap</span>
+public/
+  <span class="t-op">{}</span>                                   <span class="t-comment"># Anything goes here</span>
+docs <span class="t-op">-&gt;</span> ../docs                        <span class="t-comment"># A symlink</span></code></pre>
 <ul><li><code>$name: regex</code> hoists a bare regex, <code>|</code> for alternatives, at the top only.</li><li><code>name</code> is required, <code>name/</code> is a folder, <code>?name</code> is optional, <code>{}</code> is anything, <code>A -&gt; B</code> is a symlink.</li><li><code>$name</code> ends at the first character outside <code>[A-Za-z0-9_]</code>; write <code>{$name}</code> when a word character follows. <code>\$</code> is a literal dollar.</li><li>The same <code>$name</code> twice in one subtree matches the same text.</li><li>A trailing cap like <code>&lt;=2,000</code> limits a file's lines, with <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code> or <code>==</code>; a hoist like <code>$code</code> names one. No cap means no limit.</li><li>Comments start at column 40 at least and wrap at 80, continuing under the first <code>#</code>.</li></ul>
 
 <h2>Commands</h2>
