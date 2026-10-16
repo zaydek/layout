@@ -46,11 +46,11 @@ jobs:
           export LAYOUT_HOME="$RUNNER_TEMP/layout"
           L="$PWD/skills/layout/bin/layout"
           t="$RUNNER_TEMP/exit"; mkdir -p "$t" && cd "$t" && git init -q
-          printf 'repo.layout\n' > repo.layout
+          printf 'repo.layout <=10\n' > repo.layout
           set +e
           "$L" .; a=$?
           touch stray.txt; "$L" .; b=$?
-          printf '$x: (\n\nrepo.layout\n' > repo.layout; "$L" .; c=$?
+          printf '$x: (\n\nrepo.layout <=10\n' > repo.layout; "$L" .; c=$?
           set -e
           echo "match=$a drift=$b broken=$c"
           [ "$a" = 0 ] && [ "$b" = 1 ] && [ "$c" = 2 ]
