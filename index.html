@@ -228,7 +228,7 @@ pkg/                                   <span class="t-comment"># Importable by o
   <span class="t-var">$pkg</span>/                                <span class="t-comment"># A public package</span>
     <span class="t-op">{}</span>                                 <span class="t-comment"># Anything goes here</span></code></pre>
 </div>
-<ul><li><code>$name: regex</code> hoists a bare regex, <code>|</code> for alternatives, at the top only.</li><li><code>name</code> is required, <code>name/</code> is a folder, <code>?name</code> is optional, <code>{}</code> is anything, <code>A -&gt; B</code> is a symlink.</li><li><code>$name</code> ends at the first character outside <code>[A-Za-z0-9_]</code>; write <code>{$name}</code> when a word character follows. <code>\$</code> is a literal dollar.</li><li>The same <code>$name</code> twice in one subtree matches the same text.</li><li>A trailing cap like <code>&lt;=2,000</code> limits a file's lines, with <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code> or <code>==</code>; a hoist like <code>$code</code> names one. No cap means no limit.</li><li>Comments start at column 40 at least and wrap at 80, continuing under the first <code>#</code>.</li></ul>
+
 
 <h2>Commands</h2>
 <pre><code><span class="t-dim"></span>layout .                   <span class="t-comment"># Check this tree; exit 1 on drift</span>

@@ -29,15 +29,7 @@ public/
 docs -> ../docs                        # A symlink
 ```
 
-- `$name: regex` hoists a bare regex, `|` for alternatives, at the top only.
-- `name` is required, `name/` is a folder, `?name` is optional, `{}` is anything,
-  `A -> B` is a symlink.
-- `$name` ends at the first character outside `[A-Za-z0-9_]`; write `{$name}` when a
-  word character follows. `\$` is a literal dollar.
-- The same `$name` twice in one subtree matches the same text.
-- A trailing cap like `<=2,000` limits a file's lines, with `<`, `<=`, `>`, `>=` or
-  `==`; a hoist like `$code` names one. No cap means no limit.
-- Comments start at column 40 at least and wrap at 80, continuing under the first `#`.
+
 
 ## Commands
 
