@@ -29,9 +29,9 @@ supported.
 
 ```text
 # Names: a regex or a cap, used below as $name
-$component: [A-Z][a-zA-Z0-9]*
-$hook:      use[A-Z][a-zA-Z0-9]*
-$code:      <=400
+$component: [A-Z][a-zA-Z0-9]*          # e.g. Button, UserCard
+$hook:      use[A-Z][a-zA-Z0-9]*       # e.g. useAuth, useTheme
+$code:      <=400                      # At most 400 lines
 
 # The tree: every entry this repo may hold
 README.md                              # One: a plain name is exactly one file
@@ -56,9 +56,9 @@ From `skills/layout/examples/react.layout`:
 ```text
 # A React app: one file per component and hook, each test beside its module.
 
-$component: [A-Z][a-zA-Z0-9]*
-$hook:      use[A-Z][a-zA-Z0-9]*
-$code:      <=400
+$component: [A-Z][a-zA-Z0-9]*          # e.g. Button, UserCard
+$hook:      use[A-Z][a-zA-Z0-9]*       # e.g. useAuth, useTheme
+$code:      <=400                      # At most 400 lines
 
 README.md                              # One: a plain name is exactly one file
 package.json

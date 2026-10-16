@@ -1,9 +1,9 @@
 # A Go module: binaries in cmd/, private packages in internal/.
 
-$cmd:  [a-z][a-z0-9-]*
-$pkg:  [a-z][a-z0-9]*
-$file: [a-z][a-z0-9_]*
-$code: <=1,000
+$cmd:  [a-z][a-z0-9-]*                 # e.g. api, migrate-db
+$pkg:  [a-z][a-z0-9]*                  # e.g. auth, billing
+$file: [a-z][a-z0-9_]*                 # e.g. handler, user_store
+$code: <=1,000                         # At most 1,000 lines
 
 README.md
 go.mod

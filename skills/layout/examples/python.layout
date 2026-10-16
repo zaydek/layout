@@ -1,7 +1,7 @@
 # A Python package under src/, one module per concern.
 
-$mod:  [a-z][a-z0-9_]*
-$code: <=800
+$mod:  [a-z][a-z0-9_]*                 # e.g. parser, http_client
+$code: <=800                           # At most 800 lines
 
 README.md                              # One: a plain name is exactly one file
 pyproject.toml
