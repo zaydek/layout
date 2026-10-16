@@ -51,7 +51,11 @@ runs:
         # shellcheck disable=SC2086
         set +e; "$launcher" $LAYOUT_ARGS; code=$?; set -e
         if [ "$code" = 1 ] && [ "$LAYOUT_MARK" = true ]; then
+          # layout 0.1.2 and later print escaped workflow commands themselves; older ones print JSON
           # shellcheck disable=SC2086
-          "$launcher" $LAYOUT_ARGS --format json --color off 2>/dev/null | node "$GITHUB_ACTION_PATH/findings.mjs" || true
+          set +e; "$launcher" $LAYOUT_ARGS --format github 2>/dev/null; marked=$?; set -e
+          if [ "$marked" = 2 ]; then
+            "$launcher" $LAYOUT_ARGS --format json --color off 2>/dev/null | node "$GITHUB_ACTION_PATH/findings.mjs" || true
+          fi
         fi
         exit "$code"

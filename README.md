@@ -90,8 +90,6 @@ Exit codes: 0 the tree matches, 1 drift, 2 layout could not run or the contract 
 
 ```yaml
 - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-  with:
-    fetch-depth: 0
 - uses: zaydek/layout/.github/actions/layout@<commit sha>
   with:
     version: 0.1.1

@@ -5,8 +5,9 @@ layout is the gate in CI and a convenience in hooks. Always pin a release; there
 ## What any CI needs
 
 - The pinned binary for the runner (below), checked against its sha256.
-- git on PATH and a full checkout: `fetch-depth: 0` on GitHub, `GIT_DEPTH: 0` on GitLab. A cap
-  that grew is judged against the base commit, and a shallow checkout has no base.
+- git on PATH and a checkout of the commit. History depth does not matter: a cap is exact contract
+  text, judged on the tree alone, so a shallow clone (`fetch-depth: 1`) is fine. Raising a cap is a
+  reviewed change to `repo.layout`; put `repo.layout` in CODEOWNERS to require its owner's review.
 - Run at the repository's top, where `repo.layout` is.
 - Branch on the exit code: 0 pass, 1 drift (fail the job), 2 layout could not run (fail the job).
 
@@ -33,7 +34,6 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          fetch-depth: 0
           persist-credentials: false
       - uses: zaydek/layout/.github/actions/layout@<commit sha> # pin the commit of a release
         with:
@@ -65,10 +65,9 @@ grep " layout-$T\$" SHA256SUMS | sha256sum -c -
 chmod +x "layout-$T" && "./layout-$T" .
 ```
 
-- **GitLab CI**: put the script above in a job with `variables: { GIT_DEPTH: "0" }` and
-  `interruptible: true`; a non-zero exit fails the job.
-- **CircleCI**: a `run:` step with the script; check out with full history.
-- **Buildkite**: a command step with the script; the agent's checkout must not be shallow.
+- **GitLab CI**: put the script above in a job with `interruptible: true`; a non-zero exit fails the job.
+- **CircleCI**: a `run:` step with the script.
+- **Buildkite**: a command step with the script.
 - **Jenkins**: `sh` the script in a stage; `sh` fails the stage on exit 1 or 2. Don't wrap it in
   `catchError` or mark the build unstable instead.
 
