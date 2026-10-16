@@ -163,8 +163,7 @@ src/                                   <span class="t-comment"># One module per 
 <span class="t-dim"></span><span class="t-ok">✓</span> repo.layout                               <span class="t-comment"># This file</span>
 <span class="t-dim"></span><span class="t-bad">✗</span> src/                                      <span class="t-comment"># One module per concern</span>
 <span class="t-dim">├─ </span><span class="t-ok">✓</span> $slug.ts
-<span class="t-dim">├─ </span><span class="t-warn">!</span> checker.ts                             <span class="t-comment"># 2300 lines, over its cap of 2000 — a warning until</span>
-<span class="t-dim">                                            </span><span class="t-comment"># 2500, where it fails</span>
+<span class="t-dim">├─ </span><span class="t-bad">✗</span> checker.ts                             <span class="t-comment"># 2300 lines, outside its cap &lt;=2,000</span>
 <span class="t-dim">└─ </span><span class="t-bad">✗</span> Main.ts                                <span class="t-comment"># Unexpected by layout</span></code></pre>
   </div>
 </section>
@@ -236,7 +235,7 @@ pkg/                                   <span class="t-comment"># Importable by o
 
 <h2>Commands</h2>
 <pre><code><span class="t-dim"></span>layout .                   <span class="t-comment"># Check this tree; exit 1 on drift</span>
-<span class="t-dim"></span>layout lint                <span class="t-comment"># Check the contract's own syntax</span>
+<span class="t-dim"></span>layout lint repo.layout    <span class="t-comment"># Check the contract's own syntax</span>
 <span class="t-dim"></span>layout format              <span class="t-comment"># Rewrite the contract to house style</span>
 <span class="t-dim"></span>layout format --check      <span class="t-comment"># Exit 1 if format would change it</span></code></pre>
 

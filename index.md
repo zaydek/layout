@@ -23,8 +23,7 @@ $ layout .
 ✓ repo.layout                               # This file
 ✗ src/                                      # One module per concern
 ├─ ✓ $slug.ts
-├─ ! checker.ts                             # 2300 lines, over its cap of 2000 — a warning until
-                                            # 2500, where it fails
+├─ ✗ checker.ts                             # 2300 lines, outside its cap <=2,000
 └─ ✗ Main.ts                                # Unexpected by layout
 ```
 
@@ -124,7 +123,7 @@ pkg/                                   # Importable by other modules
 
 ```sh
 layout .                   # Check this tree; exit 1 on drift
-layout lint                # Check the contract's own syntax
+layout lint repo.layout    # Check the contract's own syntax
 layout format              # Rewrite the contract to house style
 layout format --check      # Exit 1 if format would change it
 ```
