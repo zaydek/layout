@@ -107,6 +107,10 @@ hook `layout`. Other CI systems and hooks: [ci.md](skills/layout/reference/ci.md
 [The skill](skills/layout/SKILL.md) is the full reference: the grammar, commands, every
 lint finding, writing a contract, recipes, and CI. [llms.txt](llms.txt) indexes it.
 
+## Privacy
+
+layout stores nothing and sends nothing anywhere. [PRIVACY.md](PRIVACY.md) says exactly what it reads.
+
 ## License
 
 Free to use; no redistribution ([LICENSE](LICENSE)). The editor extension in

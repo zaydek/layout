@@ -10,6 +10,7 @@ AGENTS.md -> README.md                 # Agents read the README
 CLAUDE.md -> README.md
 LICENSE $file                          # Free to use; no redistribution
 llms.txt $file                         # An index of the docs for agents
+PRIVACY.md $file                       # What layout reads; it sends nothing
 repo.layout $file                      # This contract
 .pre-commit-config.yaml $file          # This repo's own hook
 .pre-commit-hooks.yaml $file           # The hook other repos use
