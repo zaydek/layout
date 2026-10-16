@@ -52,4 +52,4 @@ layout format              # Rewrite the contract to house style
 - Claude Code: coming soon
 - Codex: coming soon
 - OpenCode: coming soon
-- oh-my-pi: coming soon
+- omp (oh-my-pi): coming soon

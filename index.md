@@ -38,7 +38,7 @@ Paste this into your coding agent (also at https://zaydek.github.io/layout/setup
 Set up layout in this repo. layout checks a repo's tree against repo.layout: https://zaydek.github.io/layout/
 
 1. Install the layout plugin for the agent you are:
-   Plugins for Claude Code, Codex, OpenCode, oh-my-pi are coming soon; until then read https://zaydek.github.io/layout/llms.txt.
+   Plugins for Claude Code, Codex, OpenCode, omp (oh-my-pi) are coming soon; until then read https://zaydek.github.io/layout/llms.txt.
 2. Read the layout skill (or https://zaydek.github.io/layout/llms.txt) for the grammar.
 3. Write repo.layout at the root: one named regex hoist per shape, and `{}` only for trees this repo doesn't own.
 4. Run `layout lint` and `layout .` until both are green; fix the contract or the tree.
@@ -52,7 +52,7 @@ A plugin for your coding agent.
 - Claude Code: coming soon
 - Codex: coming soon
 - OpenCode: coming soon
-- oh-my-pi: coming soon
+- omp (oh-my-pi): coming soon
 
 ## Grammar
 
