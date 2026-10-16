@@ -149,13 +149,15 @@ footer a { color: var(--muted); }
 <section class="hero" aria-label="Example">
   <div>
     <p class="label">repo.layout</p>
-    <pre><code><span class="t-hoist">$slug</span><span class="t-op">:</span> [a-z0-9]+(-[a-z0-9]+)*
-<span class="t-hoist">$code</span><span class="t-op">:</span> <span class="t-cap">&lt;=2,000</span>
+    <pre><code><span class="t-comment"># Names: a regex or a cap, used below as $name</span>
+<span class="t-hoist">$slug</span><span class="t-op">:</span> [a-z0-9]+(-[a-z0-9]+)*          <span class="t-comment"># e.g. parse-args, checker</span>
+<span class="t-hoist">$code</span><span class="t-op">:</span> <span class="t-cap">&lt;=2,000</span>                         <span class="t-comment"># At most 2,000 lines</span>
 
+<span class="t-comment"># The tree: every entry this repo may hold</span>
 README.md                              <span class="t-comment"># What this repo is</span>
 repo.layout                            <span class="t-comment"># This file</span>
 src/                                   <span class="t-comment"># One module per concern</span>
-  <span class="t-var">$slug</span>.ts <span class="t-var">$code</span></code></pre>
+  <span class="t-var">$slug</span>.ts <span class="t-var">$code</span>                       <span class="t-comment"># One file per module, capped</span></code></pre>
   </div>
   <div>
     <p class="label">exit 1</p>
@@ -164,7 +166,7 @@ src/                                   <span class="t-comment"># One module per 
 <span class="t-dim"></span><span class="t-ok">✓</span> README.md                                 <span class="t-comment"># What this repo is</span>
 <span class="t-dim"></span><span class="t-ok">✓</span> repo.layout                               <span class="t-comment"># This file</span>
 <span class="t-dim"></span><span class="t-bad">✗</span> src/                                      <span class="t-comment"># One module per concern</span>
-<span class="t-dim">├─ </span><span class="t-ok">✓</span> $slug.ts
+<span class="t-dim">├─ </span><span class="t-ok">✓</span> $slug.ts                               <span class="t-comment"># One file per module, capped</span>
 <span class="t-dim">├─ </span><span class="t-bad">✗</span> checker.ts                             <span class="t-comment"># 2300 lines, outside its cap &lt;=2,000</span>
 <span class="t-dim">└─ </span><span class="t-bad">✗</span> Main.ts                                <span class="t-comment"># Unexpected by layout</span></code></pre>
   </div>

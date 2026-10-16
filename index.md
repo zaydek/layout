@@ -7,13 +7,15 @@ Source of truth: [the README](https://github.com/zaydek/layout/blob/main/README.
 ## Example
 
 ```text
-$slug: [a-z0-9]+(-[a-z0-9]+)*
-$code: <=2,000
+# Names: a regex or a cap, used below as $name
+$slug: [a-z0-9]+(-[a-z0-9]+)*          # e.g. parse-args, checker
+$code: <=2,000                         # At most 2,000 lines
 
+# The tree: every entry this repo may hold
 README.md                              # What this repo is
 repo.layout                            # This file
 src/                                   # One module per concern
-  $slug.ts $code
+  $slug.ts $code                       # One file per module, capped
 ```
 
 ```text
@@ -22,7 +24,7 @@ $ layout .
 ✓ README.md                                 # What this repo is
 ✓ repo.layout                               # This file
 ✗ src/                                      # One module per concern
-├─ ✓ $slug.ts
+├─ ✓ $slug.ts                               # One file per module, capped
 ├─ ✗ checker.ts                             # 2300 lines, outside its cap <=2,000
 └─ ✗ Main.ts                                # Unexpected by layout
 ```
