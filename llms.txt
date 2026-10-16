@@ -4,6 +4,8 @@
 > listing, and exits 1 on drift. Free to use; distributed as a compiled binary through agent plugins.
 
 - Install in Claude Code: `claude plugin marketplace add zaydek/layout` then `claude plugin install layout@layout`
+- Install in Codex: `codex plugin marketplace add zaydek/layout` then `codex plugin add layout@layout`
+- Install in omp: `omp plugin marketplace add zaydek/layout` then `omp plugin install layout@layout`
 - Run: `layout .` (check), `layout lint` (the contract's own syntax), `layout format [--check]` (house style), `layout --version`
 - Exit codes: 0 match, 1 drift, 2 could not run or broken contract
 - Platforms: macOS on Apple silicon, Linux x86_64, Linux arm64. Windows is not supported.
