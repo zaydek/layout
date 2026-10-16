@@ -15,7 +15,10 @@ teaches the agent the grammar, every lint finding and how to fix drift.
 | Claude Code | `claude plugin marketplace add zaydek/layout` then `claude plugin install layout@layout` | `claude plugin marketplace update layout` then `claude plugin update layout@layout` | `claude plugin uninstall layout@layout` |
 | Codex | `codex plugin marketplace add zaydek/layout` then `codex plugin add layout@layout` | `codex plugin marketplace upgrade layout` | `codex plugin remove layout@layout` |
 | omp (oh-my-pi) | `omp plugin marketplace add zaydek/layout` then `omp plugin install layout@layout` | `omp plugin upgrade layout@layout` | `omp plugin uninstall layout@layout` |
-| OpenCode | Not yet: OpenCode loads plugins from npm, and layout is not on npm yet | | |
+| OpenCode | `mkdir -p ~/.config/opencode/skills && curl -fsSL https://github.com/zaydek/layout/archive/refs/heads/main.tar.gz \| tar -xz -C ~/.config/opencode/skills --strip-components=2 layout-main/skills/layout` | `rm -rf ~/.config/opencode/skills/layout`, then the install line again | `rm -rf ~/.config/opencode/skills/layout` |
+
+OpenCode reads skills from `~/.config/opencode/skills`, so its install puts the skill
+folder there, launcher included; `opencode debug skill` lists `layout` once it is in.
 
 The first run fetches the release for your machine from
 [Releases](https://github.com/zaydek/layout/releases) and checks its sha256 before it
