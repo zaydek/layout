@@ -37,11 +37,12 @@ docs -> ../docs                        # A symlink
 layout .                   # Check this tree; exit 1 on drift
 layout lint                # Check the contract's own syntax
 layout format              # Rewrite the contract to house style
+layout format --check      # Exit 1 if format would change it
 ```
 
 ## Install
 
-- Claude Code: coming soon
-- Codex: coming soon
+- Claude Code: `claude plugin marketplace add zaydek/layout && claude plugin install layout@layout`
+- Codex: `codex plugin marketplace add zaydek/layout && codex plugin add layout@layout`
 - OpenCode: coming soon
-- omp (oh-my-pi): coming soon
+- omp (oh-my-pi): `omp plugin marketplace add zaydek/layout && omp plugin install layout@layout`
