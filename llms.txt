@@ -3,6 +3,7 @@
 > layout checks a repo's tree against repo.layout, a contract that reads like a directory listing, and exits 1 on drift.
 
 - [Site](https://zaydek.github.io/layout/): the pitch, an example contract and check run, install, the grammar
+- [Setup prompt](https://zaydek.github.io/layout/setup.md): paste it into your coding agent to set layout up in a repo
 - [This site as Markdown](https://zaydek.github.io/layout/index.md): the same page, for agents
 - [README](https://github.com/zaydek/layout/blob/main/README.md): the grammar and the commands
 
