@@ -10,22 +10,23 @@ Releases and an installer will be published here.
 ## Grammar
 
 ```text
-$kind:    user|feedback|project|reference|threads|idea
-$project: z|life|annotate|chippy
-$slug:    [a-z0-9]+(-[a-z0-9]+)*
-$date:    \d{4}-\d{2}-\d{2}
-$memory:  {$kind}_{$project}_{$slug}_{$date}
-$code:    <=2,000
+$component: [A-Z][a-zA-Z0-9]*
+$hook:      use[A-Z][a-zA-Z0-9]*
+$code:      <=400
 
-memories/
-  ?.archive/
-    {}                                   # Anything goes here
-  $memory.md                             # Many: a pattern matches any number of files
-  INDEX.md                               # One: a plain name is exactly one file
-  memory.md                              # No cap given, so no cap
+README.md                              # One: a plain name is exactly one file
+package.json
+?CHANGELOG.md                          # ? marks an entry optional
 src/
-  $slug.ts $code                         # A hoisted cap
-docs -> ../docs                          # A symlink
+  main.tsx
+  components/
+    $component.tsx $code               # Many: a pattern matches any number
+    ?$component.test.tsx               # Same name, same text: its own test
+  hooks/
+    $hook.ts $code                     # A hoisted cap
+public/
+  {}                                   # Anything goes here
+docs -> ../docs                        # A symlink
 ```
 
 - `$name: regex` hoists a bare regex, `|` for alternatives, at the top only.
