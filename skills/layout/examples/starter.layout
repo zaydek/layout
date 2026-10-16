@@ -1,0 +1,11 @@
+# A first contract for an existing repo: every top-level entry named, every
+# folder left open with {}. Tighten one folder per change.
+
+README.md
+repo.layout                            # This contract
+?LICENSE
+?.gitignore
+src/                                   # The code; describe it next
+  {}
+docs/                                  # Docs, named by whoever writes them
+  {}

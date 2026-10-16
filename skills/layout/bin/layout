@@ -1,0 +1,84 @@
+#!/bin/sh
+# layout's launcher. It runs the layout binary for this machine, fetching it once from
+# https://github.com/zaydek/layout/releases and checking its sha256 against the table below
+# before it ever runs. Nothing else is downloaded, and nothing is sent anywhere.
+#
+# Where the binary lives (the one stable place tools outside an agent host look):
+#   ${LAYOUT_HOME:-${XDG_DATA_HOME:-$HOME/.local/share}/layout}/<version>/layout
+#   ${LAYOUT_HOME:-${XDG_DATA_HOME:-$HOME/.local/share}/layout}/bin/layout   -> the newest one fetched
+# and ~/.local/bin/layout links to that when ~/.local/bin exists and holds no other layout.
+#
+# Environment:
+#   LAYOUT_VERSION  run this release instead of the default (it must be in the table)
+#   LAYOUT_BIN      run this binary instead, unchecked (an air-gapped mirror, a local build)
+#   LAYOUT_HOME     keep binaries here instead
+#   LAYOUT_OFFLINE  set to 1: never download; fail if the binary is not already here
+#   LAYOUT_VERIFY   set to 1: re-hash a binary already here before running it (CI caches do)
+set -eu
+
+DEFAULT_VERSION=0.1.0
+# version target sha256 (one line per released binary; append-only)
+SUMS='
+0.1.0 darwin-arm64 b5b654fa5bea0fdcdc3d16dad2b18dd492a03b04b8e87800af8933675f142187
+0.1.0 linux-x64 2c6b97798ad8db3c0f269bbc1e6b08c94b0fd9a35efe8ed7c9c6368bd55a5719
+0.1.0 linux-arm64 f88427ff2b59351613d3908c7dd01f9e4795217e1bbfc5c8ba12fc4b76ecb386
+'
+
+die() { printf 'layout: %s\n' "$1" >&2; exit 2; }
+
+if [ -n "${LAYOUT_BIN:-}" ]; then exec "$LAYOUT_BIN" "$@"; fi
+
+version=${LAYOUT_VERSION:-$DEFAULT_VERSION}
+version=${version#v}
+
+case "$(uname -s)" in
+  Darwin) os=darwin ;;
+  Linux) os=linux ;;
+  *) die "this system ($(uname -s)) is not supported; layout runs on macOS on Apple silicon and on Linux (x86_64, arm64)." ;;
+esac
+case "$(uname -m)" in
+  arm64|aarch64) arch=arm64 ;;
+  x86_64|amd64) arch=x64 ;;
+  *) die "this processor ($(uname -m)) is not supported; layout runs on arm64 and x86_64." ;;
+esac
+target=$os-$arch
+if [ "$target" = darwin-x64 ]; then
+  # Rosetta runs x86_64 on Apple silicon, never the reverse
+  die "Intel Macs are not supported; layout runs on macOS on Apple silicon and on Linux."
+fi
+
+want=$(printf '%s\n' "$SUMS" | awk -v v="$version" -v t="$target" '$1 == v && $2 == t { print $3 }')
+[ -n "$want" ] || die "release $version has no checksum in this launcher; update the plugin, or set LAYOUT_VERSION to a release it lists."
+
+home=${LAYOUT_HOME:-${XDG_DATA_HOME:-$HOME/.local/share}/layout}
+bin=$home/$version/layout
+
+sha() { if command -v sha256sum >/dev/null 2>&1; then sha256sum "$1"; else shasum -a 256 "$1"; fi | awk '{ print $1 }'; }
+
+if [ -x "$bin" ] && [ "${LAYOUT_VERIFY:-0}" = 1 ] && [ "$(sha "$bin")" != "$want" ]; then
+  rm -f "$bin" "$bin.sha256"
+  die "the layout $version binary at $bin failed its checksum and was removed; nothing was run."
+fi
+if [ ! -x "$bin" ] || [ "$(cat "$bin.sha256" 2>/dev/null || true)" != "$want" ]; then
+  [ "${LAYOUT_OFFLINE:-0}" = 1 ] && die "layout $version is not at $bin and LAYOUT_OFFLINE=1 forbids downloading it."
+  mkdir -p "$home/$version"
+  url="https://github.com/zaydek/layout/releases/download/v$version/layout-$target"
+  part="$bin.part.$$"
+  printf 'layout: fetching layout %s for %s, once\n' "$version" "$target" >&2
+  if command -v curl >/dev/null 2>&1; then curl -fsSL --retry 3 -o "$part" "$url" || { rm -f "$part"; die "could not download $url"; }
+  elif command -v wget >/dev/null 2>&1; then wget -q -O "$part" "$url" || { rm -f "$part"; die "could not download $url"; }
+  else die "neither curl nor wget is installed, so layout cannot be fetched."; fi
+  got=$(sha "$part")
+  if [ "$got" != "$want" ]; then rm -f "$part"; die "the download of layout $version for $target failed its checksum (got $got, want $want); nothing was run."; fi
+  chmod 755 "$part"
+  mv -f "$part" "$bin"
+  printf '%s\n' "$want" > "$bin.sha256"
+  mkdir -p "$home/bin"
+  ln -sfn "../$version/layout" "$home/bin/layout"
+  link=$HOME/.local/bin/layout
+  if [ -d "$HOME/.local/bin" ] && { [ ! -e "$link" ] || [ "$(readlink "$link" 2>/dev/null || true)" = "$home/bin/layout" ]; }; then
+    ln -sfn "$home/bin/layout" "$link" 2>/dev/null || true
+  fi
+fi
+
+exec "$bin" "$@"

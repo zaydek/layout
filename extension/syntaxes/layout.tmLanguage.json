@@ -1,0 +1,243 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Layout",
+  "scopeName": "source.layout",
+  "fileTypes": [
+    "layout"
+  ],
+  "patterns": [
+    {
+      "include": "#comment-line"
+    },
+    {
+      "include": "#frozen"
+    },
+    {
+      "include": "#hoist"
+    },
+    {
+      "include": "#entry"
+    }
+  ],
+  "repository": {
+    "comment-line": {
+      "match": "^\\s*(#).*$",
+      "name": "comment.line.number-sign.layout",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment.layout"
+        }
+      }
+    },
+    "comment-inline": {
+      "match": "(?<=\\s)(#).*$",
+      "name": "comment.line.number-sign.layout",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment.layout"
+        }
+      }
+    },
+    "frozen": {
+      "comment": "= path <=N, one per frozen file, in the block that ends the file",
+      "begin": "^(=)(?=\\s)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.frozen.layout"
+        }
+      },
+      "end": "$",
+      "name": "meta.frozen.layout",
+      "patterns": [
+        {
+          "include": "#escape"
+        },
+        {
+          "include": "#cap"
+        },
+        {
+          "include": "#comment-inline"
+        },
+        {
+          "match": "[^\\s#\\\\]+",
+          "name": "string.unquoted.path.frozen.layout"
+        }
+      ]
+    },
+    "hoist": {
+      "comment": "$name: regex, or $name: <=N for a cap, at the top of the file",
+      "begin": "^(\\$)([A-Za-z_]\\w*)(:)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.variable.layout"
+        },
+        "2": {
+          "name": "entity.name.type.hoist.layout"
+        },
+        "3": {
+          "name": "punctuation.separator.key-value.layout"
+        }
+      },
+      "end": "$",
+      "name": "meta.hoist.layout",
+      "patterns": [
+        {
+          "include": "#comment-inline"
+        },
+        {
+          "include": "#cap-value"
+        },
+        {
+          "include": "#regex"
+        }
+      ]
+    },
+    "entry": {
+      "patterns": [
+        {
+          "match": "^\\s*(\\?)",
+          "captures": {
+            "1": {
+              "name": "storage.modifier.optional.layout"
+            }
+          }
+        },
+        {
+          "include": "#escape"
+        },
+        {
+          "include": "#cap"
+        },
+        {
+          "include": "#outlet"
+        },
+        {
+          "include": "#ref"
+        },
+        {
+          "match": "\\s(->)\\s",
+          "captures": {
+            "1": {
+              "name": "keyword.other.symlink.layout"
+            }
+          }
+        },
+        {
+          "include": "#comment-inline"
+        },
+        {
+          "match": "/(?=\\s|$)",
+          "name": "punctuation.separator.directory.layout"
+        }
+      ]
+    },
+    "escape": {
+      "match": "\\\\[#{}$]",
+      "name": "constant.character.escape.layout"
+    },
+    "cap-value": {
+      "match": "(<=)\\s*(\\d{1,3}(?:,\\d{3})+|\\d+)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator.cap.layout"
+        },
+        "2": {
+          "name": "constant.numeric.integer.layout"
+        }
+      }
+    },
+    "cap": {
+      "comment": "A cap ends a file entry: <=2,000, or a hoisted $code",
+      "patterns": [
+        {
+          "match": "(?<=\\s)(<=)(\\d{1,3}(?:,\\d{3})+|\\d+)(?=\\s|$)",
+          "captures": {
+            "1": {
+              "name": "keyword.operator.cap.layout"
+            },
+            "2": {
+              "name": "constant.numeric.integer.layout"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\S )(\\$)([A-Za-z_]\\w*)(?=\\s*(?:#|$))",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.variable.layout"
+            },
+            "2": {
+              "name": "variable.other.constant.cap.layout"
+            }
+          }
+        }
+      ]
+    },
+    "outlet": {
+      "comment": "{} outlet: anything else here is fine",
+      "match": "(\\{)(\\})",
+      "name": "keyword.control.outlet.layout",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.slot.begin.layout"
+        },
+        "2": {
+          "name": "punctuation.definition.slot.end.layout"
+        }
+      }
+    },
+    "ref": {
+      "patterns": [
+        {
+          "match": "(\\{)(\\$)([A-Za-z_]\\w*)(\\})",
+          "name": "meta.slot.hoist.layout",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.slot.begin.layout"
+            },
+            "2": {
+              "name": "punctuation.definition.variable.layout"
+            },
+            "3": {
+              "name": "variable.other.constant.hoist.layout"
+            },
+            "4": {
+              "name": "punctuation.definition.slot.end.layout"
+            }
+          }
+        },
+        {
+          "match": "(\\$)([A-Za-z_]\\w*)",
+          "name": "meta.slot.hoist.layout",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.variable.layout"
+            },
+            "2": {
+              "name": "variable.other.constant.hoist.layout"
+            }
+          }
+        }
+      ]
+    },
+    "regex": {
+      "comment": "A hoist's value: one bare regex, implicitly anchored",
+      "begin": "(?<=:)\\s*(?=[^\\s<#])",
+      "end": "(?=\\s+#|\\s*$)",
+      "name": "string.regexp.layout",
+      "patterns": [
+        {
+          "include": "#ref"
+        },
+        {
+          "match": "\\|",
+          "name": "keyword.operator.alternation.regexp.layout"
+        },
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.regexp.layout"
+        }
+      ]
+    }
+  }
+}

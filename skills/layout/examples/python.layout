@@ -1,0 +1,14 @@
+# A Python package under src/, one module per concern.
+
+$mod:  [a-z][a-z0-9_]*
+$code: <=800
+
+README.md                              # One: a plain name is exactly one file
+pyproject.toml
+repo.layout                            # This contract
+?uv.lock                               # ? marks an entry optional
+src/                                   # The package, under src/
+  app/                                 # The import name
+    __init__.py
+    $mod.py $code                      # Many: one module per concern
+    ?{$mod}_test.py                    # An optional test beside it

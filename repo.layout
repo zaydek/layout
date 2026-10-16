@@ -1,0 +1,56 @@
+# The publish gate: this repo ships only what is named here. `layout .` checks
+# it on every push and pull request.
+
+$file:    <=2,000                      # Every shipped file stays readable
+$ref:     [a-z]+
+$example: [a-z]+
+
+README.md $file                        # The one doc
+AGENTS.md -> README.md                 # Agents read the README
+CLAUDE.md -> README.md
+LICENSE $file                          # Free to use; no redistribution
+llms.txt $file                         # An index of the docs for agents
+repo.layout $file                      # This contract
+.pre-commit-config.yaml $file          # This repo's own hook
+.pre-commit-hooks.yaml $file           # The hook other repos use
+.claude-plugin/                        # Claude Code and omp read the
+                                       # marketplace here
+  plugin.json $file
+  marketplace.json $file
+.codex-plugin/                         # Codex's plugin manifest
+  plugin.json $file
+.agents/                               # Codex's marketplace
+  plugins/                             # One marketplace file
+    marketplace.json $file
+.github/                               # CI and the published action
+  workflows/                           # This repo's own checks
+    layout.yml $file
+  actions/                             # The action other repos use
+    layout/                            # zaydek/layout/.github/actions/layout
+      action.yml $file
+      findings.mjs $file
+skills/                                # The skill every plugin carries
+  layout/                              # One skill
+    SKILL.md $file
+    bin/                               # The launcher
+      layout $file
+    reference/                         # One page per topic
+      $ref.md $file
+    examples/                          # Complete contracts and their SVGs
+      $example.layout $file
+      $example-dark.svg $file
+extension/                             # The VS Code and Cursor extension
+                                       # (MIT)
+  LICENSE $file
+  README.md $file
+  package.json $file
+  language-configuration.json $file
+  .gitignore $file
+  .vscodeignore $file
+  src/                                 # The client that spawns the binary
+    extension.ts $file
+  syntaxes/                            # The TextMate grammar
+    layout.tmLanguage.json $file
+  images/                              # The icon and the screenshot
+    icon.png $file
+    screenshot.png $file

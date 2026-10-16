@@ -1,0 +1,20 @@
+# layout
+
+> layout checks a repository's file tree against repo.layout, a contract that reads like a directory
+> listing, and exits 1 on drift. Free to use; distributed as a compiled binary through agent plugins.
+
+- Install in Claude Code: `claude plugin marketplace add zaydek/layout` then `claude plugin install layout@layout`
+- Run: `layout .` (check), `layout lint` (the contract's own syntax), `layout format [--check]` (house style), `layout --version`
+- Exit codes: 0 match, 1 drift, 2 could not run or broken contract
+- Platforms: macOS on Apple silicon, Linux x86_64, Linux arm64. Windows is not supported.
+
+## Docs
+
+- [Skill entry point](https://github.com/zaydek/layout/blob/main/skills/layout/SKILL.md): how an agent runs layout and fixes drift
+- [Grammar](https://github.com/zaydek/layout/blob/main/skills/layout/reference/grammar.md): every construct with an example
+- [Commands](https://github.com/zaydek/layout/blob/main/skills/layout/reference/commands.md): commands, .layout.config, exit codes
+- [Lint findings](https://github.com/zaydek/layout/blob/main/skills/layout/reference/lint.md): every finding and its fix
+- [Writing contracts](https://github.com/zaydek/layout/blob/main/skills/layout/reference/writing.md): from scratch, adopting, fixing drift
+- [Recipes](https://github.com/zaydek/layout/blob/main/skills/layout/reference/recipes.md): suggested regexes and shapes
+- [CI and hooks](https://github.com/zaydek/layout/blob/main/skills/layout/reference/ci.md): the GitHub Action, other CI, pre-commit
+- [Releases](https://github.com/zaydek/layout/releases): binaries and SHA256SUMS

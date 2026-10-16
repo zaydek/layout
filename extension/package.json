@@ -1,0 +1,51 @@
+{
+  "name": "layout",
+  "displayName": "Layout",
+  "description": "Highlighting, lint diagnostics and formatting for repo.layout contracts, the file layout checks a repo's tree against.",
+  "version": "0.3.0",
+  "publisher": "zaydek",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "homepage": "https://zaydek.github.io/layout/",
+  "repository": { "type": "git", "url": "https://github.com/zaydek/layout.git", "directory": "extension" },
+  "bugs": { "url": "https://github.com/zaydek/layout/issues" },
+  "galleryBanner": { "color": "#161920", "theme": "dark" },
+  "keywords": ["layout", "repo.layout", "contract", "file structure", "folder structure", "lint", "allowlist"],
+  "engines": { "vscode": "^1.75.0" },
+  "categories": ["Programming Languages", "Linters", "Formatters"],
+  "main": "./out/extension.js",
+  "activationEvents": ["workspaceContains:**/*.layout"],
+  "capabilities": { "untrustedWorkspaces": { "supported": "limited", "description": "Highlighting works everywhere; lint, format and check run the layout binary only in a trusted workspace." } },
+  "contributes": {
+    "languages": [
+      {
+        "id": "layout",
+        "aliases": ["Layout", "layout"],
+        "extensions": [".layout"],
+        "filenames": ["repo.layout"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      { "language": "layout", "scopeName": "source.layout", "path": "./syntaxes/layout.tmLanguage.json" }
+    ],
+    "commands": [
+      { "command": "layout.check", "title": "Layout: Check This Workspace" }
+    ],
+    "configuration": {
+      "title": "Layout",
+      "properties": {
+        "layout.path": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "The layout binary. Empty: `$LAYOUT_BIN`, then `layout` on PATH, then `~/.local/share/layout/bin/layout`, where the agent plugins keep it."
+        },
+        "layout.lintOnSave": { "type": "boolean", "default": true, "description": "Run layout lint when a contract is opened or saved." }
+      }
+    }
+  },
+  "scripts": {
+    "build": "bun build src/extension.ts --outfile out/extension.js --target node --format cjs --external vscode",
+    "package": "npm run build && npx --yes @vscode/vsce@3.6.2 package --no-dependencies"
+  }
+}

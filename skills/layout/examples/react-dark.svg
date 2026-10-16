@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="391" viewBox="0 0 672 391" role="img" aria-label="react.layout">
+<title>react.layout</title>
+<rect width="100%" height="100%" rx="6" fill="#1E1E1E"/>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#D4D4D4" style="white-space: pre">
+<text x="16" y="29" xml:space="preserve"><tspan fill="#6A9955"># A React app: one file per component and hook, each test beside its module.</tspan></text>
+<text x="16" y="67" xml:space="preserve">$<tspan fill="#4EC9B0">component</tspan>:<tspan fill="#d16969"> [A-Z][a-zA-Z0-9]*</tspan></text>
+<text x="16" y="86" xml:space="preserve">$<tspan fill="#4EC9B0">hook</tspan>:<tspan fill="#d16969">      use[A-Z][a-zA-Z0-9]*</tspan></text>
+<text x="16" y="105" xml:space="preserve">$<tspan fill="#4EC9B0">code</tspan>:      <tspan fill="#d4d4d4">&lt;=</tspan><tspan fill="#b5cea8">400</tspan></text>
+<text x="16" y="143" xml:space="preserve">README.md                              <tspan fill="#6A9955"># One: a plain name is exactly one file</tspan></text>
+<text x="16" y="162" xml:space="preserve">package.json</text>
+<text x="16" y="181" xml:space="preserve">repo.layout                            <tspan fill="#6A9955"># This contract</tspan></text>
+<text x="16" y="200" xml:space="preserve"><tspan fill="#569cd6">?</tspan>CHANGELOG.md                          <tspan fill="#6A9955"># ? marks an entry optional</tspan></text>
+<text x="16" y="219" xml:space="preserve">src/                                   <tspan fill="#6A9955"># The app</tspan></text>
+<text x="16" y="238" xml:space="preserve">  main.tsx</text>
+<text x="16" y="257" xml:space="preserve">  components/                          <tspan fill="#6A9955"># One file per component</tspan></text>
+<text x="16" y="276" xml:space="preserve">    $<tspan fill="#4FC1FF">component</tspan>.tsx $<tspan fill="#4FC1FF">code</tspan>               <tspan fill="#6A9955"># Many: a pattern matches any number</tspan></text>
+<text x="16" y="295" xml:space="preserve">    <tspan fill="#569cd6">?</tspan>$<tspan fill="#4FC1FF">component</tspan>.test.tsx               <tspan fill="#6A9955"># An optional test beside it</tspan></text>
+<text x="16" y="314" xml:space="preserve">  hooks/                               <tspan fill="#6A9955"># One file per hook</tspan></text>
+<text x="16" y="333" xml:space="preserve">    $<tspan fill="#4FC1FF">hook</tspan>.ts $<tspan fill="#4FC1FF">code</tspan>                     <tspan fill="#6A9955"># A hoisted cap</tspan></text>
+<text x="16" y="352" xml:space="preserve">public/                                <tspan fill="#6A9955"># Static files</tspan></text>
+<text x="16" y="371" xml:space="preserve">  <tspan fill="#C586C0">{}</tspan>                                   <tspan fill="#6A9955"># Anything goes here</tspan></text>
+</g>
+</svg>

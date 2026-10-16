@@ -1,0 +1,22 @@
+layout License
+
+Copyright (c) 2026 Zaydek Michels-Gualtieri. All rights reserved.
+
+layout (the compiled binaries in this repository's GitHub Releases, the skill in skills/, and the
+other files in this repository except extension/, which is under its own MIT license) is free to use
+for any purpose, personal or commercial, at no cost.
+
+You may:
+- run layout on any machine, in any repository, in continuous integration and in git hooks;
+- download and cache the released binaries, keep copies of them on your own machines, and mirror
+  them inside your own organization (for example, for air-gapped builds or in a container image you
+  use yourself), unchanged and with this license.
+
+You may not:
+- redistribute, sell, sublicense or publish layout or any part of it outside your organization,
+  other than by linking to this repository or its releases;
+- modify, decompile, disassemble or reverse engineer the binaries, except where the law forbids this
+  restriction.
+
+layout is provided "as is", without warranty of any kind, express or implied. In no event shall the
+author be liable for any claim, damages or other liability arising from its use.

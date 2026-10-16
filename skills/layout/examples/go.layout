@@ -1,0 +1,21 @@
+# A Go module: binaries in cmd/, private packages in internal/.
+
+$cmd:  [a-z][a-z0-9-]*
+$pkg:  [a-z][a-z0-9]*
+$file: [a-z][a-z0-9_]*
+$code: <=1,000
+
+README.md
+go.mod
+?go.sum
+repo.layout                            # This contract
+cmd/                                   # One folder per binary
+  $cmd/                                # One binary, named by its folder
+    main.go
+internal/                              # Private to this module
+  $pkg/                                # One package per folder
+    $file.go $code
+    ?{$file}_test.go                   # An optional test beside it
+pkg/                                   # Importable by other modules
+  $pkg/                                # A public package
+    {}                                 # Anything goes here

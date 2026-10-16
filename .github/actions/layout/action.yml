@@ -1,0 +1,57 @@
+name: layout
+description: Check the tree against repo.layout with a pinned, checksummed layout binary, and mark each finding on its file.
+inputs:
+  version:
+    description: The layout release to run, such as 0.1.0. Required; there is no "latest".
+    required: true
+  args:
+    description: Arguments to layout.
+    default: "."
+  working-directory:
+    description: Where to run, the folder that holds repo.layout.
+    default: "."
+  binary-path:
+    description: Run this binary instead of downloading one (an air-gapped mirror). It is not checksummed.
+    default: ""
+  mark-findings:
+    description: Write a GitHub annotation on each finding's file ("true" or "false").
+    default: "true"
+runs:
+  using: composite
+  steps:
+    - name: Refuse unsupported runners
+      shell: bash
+      run: |
+        case "$RUNNER_OS-$RUNNER_ARCH" in
+          macOS-ARM64|Linux-X64|Linux-ARM64) ;;
+          Windows-*) echo "::error::layout does not run on Windows; use a Linux or macOS (Apple silicon) runner."; exit 2 ;;
+          *) echo "::error::layout does not run on $RUNNER_OS $RUNNER_ARCH; it runs on Linux (x86_64, arm64) and macOS on Apple silicon."; exit 2 ;;
+        esac
+        [ -n "${{ inputs.version }}" ] || { echo "::error::Set the version input to a release, such as 0.1.0."; exit 2; }
+    - name: Cache the binary
+      if: inputs.binary-path == ''
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ${{ runner.tool_cache }}/layout/${{ inputs.version }}
+        key: layout-${{ inputs.version }}-${{ runner.os }}-${{ runner.arch }}
+    - name: layout
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        LAYOUT_VERSION: ${{ inputs.version }}
+        LAYOUT_HOME: ${{ runner.tool_cache }}/layout
+        LAYOUT_VERIFY: "1"
+        LAYOUT_BIN: ${{ inputs.binary-path }}
+        LAYOUT_ARGS: ${{ inputs.args }}
+        LAYOUT_MARK: ${{ inputs.mark-findings }}
+      run: |
+        launcher="$GITHUB_ACTION_PATH/../../../skills/layout/bin/layout"
+        "$launcher" --version
+        echo "$LAYOUT_HOME/bin" >> "$GITHUB_PATH"
+        # shellcheck disable=SC2086
+        set +e; "$launcher" $LAYOUT_ARGS; code=$?; set -e
+        if [ "$code" = 1 ] && [ "$LAYOUT_MARK" = true ]; then
+          # shellcheck disable=SC2086
+          "$launcher" $LAYOUT_ARGS --format json --color off 2>/dev/null | node "$GITHUB_ACTION_PATH/findings.mjs" || true
+        fi
+        exit "$code"

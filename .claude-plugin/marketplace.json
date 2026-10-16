@@ -1,0 +1,14 @@
+{
+  "name": "layout",
+  "owner": { "name": "Zaydek Michels-Gualtieri" },
+  "metadata": { "description": "The layout plugin: check a repo's tree against repo.layout." },
+  "plugins": [
+    {
+      "name": "layout",
+      "source": "./",
+      "description": "Checks a repo's file tree against repo.layout, a contract that reads like a directory listing, and teaches the agent to write contracts and fix drift.",
+      "version": "0.1.0",
+      "homepage": "https://zaydek.github.io/layout/"
+    }
+  ]
+}

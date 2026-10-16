@@ -3,9 +3,26 @@
 `layout` checks a repo's tree against `repo.layout`, a contract that reads like a
 directory listing, and exits 1 on drift.
 
+[![layout](https://github.com/zaydek/layout/actions/workflows/layout.yml/badge.svg)](https://github.com/zaydek/layout/actions/workflows/layout.yml)
+
 ## Install
 
-Releases and an installer will be published here.
+layout installs as a plugin in your agent, which carries the binary and a skill that
+teaches the agent the grammar, every lint finding and how to fix drift.
+
+| Host | Install | Update | Uninstall |
+| ---- | ------- | ------ | --------- |
+| Claude Code | `claude plugin marketplace add zaydek/layout` then `claude plugin install layout@layout` | `claude plugin marketplace update layout` then `claude plugin update layout@layout` | `claude plugin uninstall layout@layout` |
+| Codex | `codex plugin marketplace add zaydek/layout`, then install layout from `/plugins` | `codex plugin marketplace upgrade layout` | Uninstall from `/plugins` |
+| omp (oh-my-pi) | `omp plugin marketplace add zaydek/layout` then `omp plugin install layout@layout` | `omp plugin upgrade layout@layout` | `omp plugin uninstall layout@layout` |
+
+The first run fetches the release for your machine from
+[Releases](https://github.com/zaydek/layout/releases) and checks its sha256 before it
+runs. The binary then lives at `~/.local/share/layout/bin/layout` (and `~/.local/bin/layout`
+when that folder exists), where git hooks and editors find it.
+
+macOS on Apple silicon, Linux x86_64 and Linux arm64. Windows and Intel Macs are not
+supported.
 
 ## Grammar
 
@@ -31,7 +48,7 @@ docs -> ../docs                        # A symlink
 
 ## Example
 
-<img src="examples/features-dark.svg" alt="examples/features.layout, highlighted">
+<img src="skills/layout/examples/react-dark.svg" alt="skills/layout/examples/react.layout, highlighted">
 
 ## Commands
 
@@ -39,4 +56,32 @@ docs -> ../docs                        # A symlink
 layout .                   # Check this tree; exit 1 on drift
 layout lint                # Check the contract's own syntax
 layout format              # Rewrite the contract to house style
+layout format --check      # Exit 1 if format would change it
 ```
+
+Exit codes: 0 the tree matches, 1 drift, 2 layout could not run or the contract is broken.
+
+## CI and hooks
+
+```yaml
+- uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+  with:
+    fetch-depth: 0
+- uses: zaydek/layout/.github/actions/layout@<commit sha>
+  with:
+    version: 0.1.0
+```
+
+The action pins the version, checks the binary's sha256, caches it, and marks each
+finding on its file in the pull request. pre-commit: `repo: https://github.com/zaydek/layout`,
+hook `layout`. Other CI systems and hooks: [ci.md](skills/layout/reference/ci.md).
+
+## Docs
+
+[The skill](skills/layout/SKILL.md) is the full reference: the grammar, commands, every
+lint finding, writing a contract, recipes, and CI. [llms.txt](llms.txt) indexes it.
+
+## License
+
+Free to use; no redistribution ([LICENSE](LICENSE)). The editor extension in
+[extension/](extension/) is MIT.

@@ -1,0 +1,18 @@
+{
+  "comments": {
+    "lineComment": "#"
+  },
+  "brackets": [
+    ["{", "}"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" }
+  ],
+  "surroundingPairs": [
+    ["{", "}"]
+  ],
+  "indentationRules": {
+    "increaseIndentPattern": "/\\s*(#.*)?$",
+    "decreaseIndentPattern": "^\\s*$^"
+  }
+}

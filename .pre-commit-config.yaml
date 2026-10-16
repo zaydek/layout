@@ -1,0 +1,10 @@
+# This repo checks itself with its own hook; other repos use `repo: https://github.com/zaydek/layout`.
+repos:
+  - repo: local
+    hooks:
+      - id: layout
+        name: layout
+        entry: skills/layout/bin/layout .
+        language: script
+        pass_filenames: false
+        always_run: true

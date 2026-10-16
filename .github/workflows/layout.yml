@@ -1,0 +1,96 @@
+name: layout
+on:
+  push:
+    branches: [main]
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: layout-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  layout:
+    name: layout
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: ./.github/actions/layout
+        with:
+          version: 0.1.0
+
+  platforms:
+    name: platforms (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, ubuntu-24.04-arm, macos-15]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: The launcher fetches, checks and runs the binary
+        run: |
+          export LAYOUT_HOME="$RUNNER_TEMP/layout"
+          skills/layout/bin/layout --version
+          skills/layout/bin/layout .
+          test -x "$LAYOUT_HOME/bin/layout"
+      - name: Exit codes are 0, 1 and 2
+        run: |
+          export LAYOUT_HOME="$RUNNER_TEMP/layout"
+          L="$PWD/skills/layout/bin/layout"
+          t="$RUNNER_TEMP/exit"; mkdir -p "$t" && cd "$t" && git init -q
+          printf 'repo.layout\n' > repo.layout
+          set +e
+          "$L" .; a=$?
+          touch stray.txt; "$L" .; b=$?
+          printf '$x: (\n\nrepo.layout\n' > repo.layout; "$L" .; c=$?
+          set -e
+          echo "match=$a drift=$b broken=$c"
+          [ "$a" = 0 ] && [ "$b" = 1 ] && [ "$c" = 2 ]
+      - name: Every example contract lints clean
+        run: |
+          export LAYOUT_HOME="$RUNNER_TEMP/layout"
+          for f in skills/layout/examples/*.layout; do skills/layout/bin/layout lint "$f"; done
+
+  tamper:
+    name: a tampered download never runs
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: |
+          sed -E 's/^(0\.1\.0 linux-x64 )[0-9a-f]{64}$/\1'"$(printf '0%.0s' $(seq 64))"'/' skills/layout/bin/layout > "$RUNNER_TEMP/tampered"
+          chmod +x "$RUNNER_TEMP/tampered"
+          set +e; LAYOUT_HOME="$RUNNER_TEMP/t" "$RUNNER_TEMP/tampered" --version 2> err.txt; code=$?; set -e
+          cat err.txt
+          [ "$code" = 2 ] && grep -q 'failed its checksum' err.txt && [ ! -e "$RUNNER_TEMP/t/0.1.0/layout" ]
+
+  hooks:
+    name: hooks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: pipx run pre-commit==4.3.0 run --all-files --show-diff-on-failure
+
+  names:
+    name: no private names
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: No shipped file names an internal project
+        run: |
+          # The patterns are encoded so this file does not match itself
+          pattern=$(printf '%s' 'bWVtb3JpZXN8XCRraW5kfFwkcHJvamVjdHxyZWZlcmVuY2VfYWNjb3VudHN8Y2hpcHB5fGFubm90YXRpb25zfGFubm90YXRl' | base64 -d)
+          if git ls-files -z | xargs -0 grep -nIiE "$pattern"; then echo "::error::A shipped file names an internal project"; exit 1; fi
