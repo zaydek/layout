@@ -21,7 +21,7 @@ src/
   main.tsx
   components/
     $component.tsx $code               # Many: a pattern matches any number
-    ?$component.test.tsx               # Same name, same text: its own test
+    ?$component.test.tsx               # An optional test beside it        
   hooks/
     $hook.ts $code                     # A hoisted cap
 public/

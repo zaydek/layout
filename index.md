@@ -68,7 +68,7 @@ src/
   main.tsx
   components/
     $component.tsx $code               # Many: a pattern matches any number
-    ?$component.test.tsx               # Same name, same text: its own test
+    ?$component.test.tsx               # An optional test beside it        
   hooks/
     $hook.ts $code                     # A hoisted cap
 public/
@@ -100,8 +100,7 @@ src/                                   # The package, under src/
   app/                                 # The import name
     __init__.py
     $mod.py $code                      # Many: one module per concern
-    ?{$mod}_test.py                    # {$mod} binds: each test sits beside
-                                       # its module
+    ?{$mod}_test.py                    # An optional test beside it
 ```
 
 ### Go service
@@ -122,7 +121,7 @@ cmd/                                   # One folder per binary
 internal/                              # Private to this module
   $pkg/                                # One package per folder
     $file.go $code
-    ?{$file}_test.go                   # A test beside the file it covers
+    ?{$file}_test.go                   # An optional test beside it
 pkg/                                   # Importable by other modules
   $pkg/                                # A public package
     {}                                 # Anything goes here
