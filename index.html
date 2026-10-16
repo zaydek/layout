@@ -112,7 +112,9 @@ src/                                   <span class="t-comment"># One module per 
 <h2>Grammar</h2>
 <pre><code><span class="t-hoist">$kind</span><span class="t-op">:</span>    user<span class="t-op">|</span>feedback<span class="t-op">|</span>project<span class="t-op">|</span>reference<span class="t-op">|</span>threads<span class="t-op">|</span>idea
 <span class="t-hoist">$project</span><span class="t-op">:</span> z<span class="t-op">|</span>life<span class="t-op">|</span>annotate<span class="t-op">|</span>chippy
-<span class="t-hoist">$memory</span><span class="t-op">:</span>  <span class="t-var">{$kind}</span>_<span class="t-var">{$project}</span>_<span class="t-var">$std:kebab_</span><span class="t-var">$std:date</span>
+<span class="t-hoist">$slug</span><span class="t-op">:</span>    [a-z0-9]+(-[a-z0-9]+)*
+<span class="t-hoist">$date</span><span class="t-op">:</span>    \d{4}-\d{2}-\d{2}
+<span class="t-hoist">$memory</span><span class="t-op">:</span>  <span class="t-var">{$kind}</span>_<span class="t-var">{$project}</span>_<span class="t-var">{$slug}</span>_<span class="t-var">{$date}</span>
 <span class="t-hoist">$code</span><span class="t-op">:</span>    <span class="t-cap">&lt;=2,000</span>
 
 memories/
@@ -122,18 +124,14 @@ memories/
   INDEX.md                               <span class="t-comment"># One: a plain name is exactly one file</span>
   memory.md                              <span class="t-comment"># No cap given, so no cap</span>
 src/
-  <span class="t-var">$std:kebab</span>.ts <span class="t-var">$code</span>                    <span class="t-comment"># A hoisted cap</span>
+  <span class="t-var">$slug</span>.ts <span class="t-var">$code</span>                         <span class="t-comment"># A hoisted cap</span>
 docs <span class="t-op">-&gt;</span> ../docs                          <span class="t-comment"># A symlink</span></code></pre>
-<ul><li><code>$name: regex</code> hoists a bare regex, <code>|</code> for alternatives, at the top only.</li><li><code>name</code> is required, <code>name/</code> is a folder, <code>?name</code> is optional, <code>{}</code> is anything, <code>A -&gt; B</code> is a symlink.</li><li><code>$name</code> ends at the first character outside <code>[A-Za-z0-9_]</code>; write <code>{$name}</code> when a word character follows. <code>\$</code> is a literal dollar.</li><li>The same <code>$name</code> twice in one subtree matches the same text.</li><li>A trailing <code>&lt;=2,000</code> or <code>$code</code> caps a file in lines; no cap means no cap. The frozen block is <code>= path &lt;=N</code>.</li><li>Comments start at column 40 at least and wrap at 80, continuing under the first <code>#</code>.</li></ul>
-<h2>Standard library</h2>
-<p>Every contract can name these with no hoist.</p>
-<table><thead><tr><th>Name</th><th>Regex</th><th>Example</th></tr></thead><tbody><tr><td><code>$std:date</code></td><td><code>\d{4}-\d{2}-\d{2}</code></td><td><code>2026-10-16</code></td></tr><tr><td><code>$std:kebab</code></td><td><code>[a-z0-9]+(-[a-z0-9]+)*</code></td><td><code>grammar-v2</code></td></tr><tr><td><code>$std:semver</code></td><td><code>\d+\.\d+\.\d+</code></td><td><code>0.2.2</code></td></tr><tr><td><code>$std:v</code></td><td><code>v[1-9]\d*</code></td><td><code>v2</code></td></tr><tr><td><code>$std:int</code></td><td><code>\d+</code></td><td><code>8166</code></td></tr><tr><td><code>$std:screaming</code></td><td><code>[A-Z][A-Z0-9_]*</code></td><td><code>README_V2</code></td></tr><tr><td><code>$std:pascal</code></td><td><code>[A-Z][a-zA-Z0-9]*</code></td><td><code>ButtonGroup</code></td></tr><tr><td><code>$std:camel</code></td><td><code>[a-z][a-zA-Z0-9]*</code></td><td><code>buttonGroup</code></td></tr><tr><td><code>$std:snake</code></td><td><code>[a-z0-9]+(_[a-z0-9]+)*</code></td><td><code>user_feedback</code></td></tr><tr><td><code>$std:stamp</code></td><td><code>\d{8}-\d{4}</code></td><td><code>20261016-1530</code></td></tr><tr><td><code>$std:utctime</code></td><td><code>\d{2}-\d{2}-\d{2}Z</code></td><td><code>15-30-00Z</code></td></tr></tbody></table>
+<ul><li><code>$name: regex</code> hoists a bare regex, <code>|</code> for alternatives, at the top only.</li><li><code>name</code> is required, <code>name/</code> is a folder, <code>?name</code> is optional, <code>{}</code> is anything, <code>A -&gt; B</code> is a symlink.</li><li><code>$name</code> ends at the first character outside <code>[A-Za-z0-9_]</code>; write <code>{$name}</code> when a word character follows. <code>\$</code> is a literal dollar.</li><li>The same <code>$name</code> twice in one subtree matches the same text.</li><li>A trailing cap like <code>&lt;=2,000</code> limits a file's lines, with <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code> or <code>==</code>; a hoist like <code>$code</code> names one. No cap means no limit.</li><li>Comments start at column 40 at least and wrap at 80, continuing under the first <code>#</code>.</li></ul>
+
 <h2>Commands</h2>
 <pre><code><span class="t-dim"></span>layout .                   <span class="t-comment"># Check this tree; exit 1 on drift</span>
-<span class="t-dim"></span>layout fmt [file]          <span class="t-comment"># Rewrite a contract to house style</span>
-<span class="t-dim"></span>layout lint &lt;file&gt;         <span class="t-comment"># Check a contract's own syntax</span>
-<span class="t-dim"></span>layout freeze              <span class="t-comment"># Freeze the files already over their caps</span>
-<span class="t-dim"></span>layout render [file]       <span class="t-comment"># Print a contract, or draw findings JSON</span></code></pre>
+<span class="t-dim"></span>layout lint                <span class="t-comment"># Check the contract's own syntax</span>
+<span class="t-dim"></span>layout format              <span class="t-comment"># Rewrite the contract to house style</span></code></pre>
 
 <footer>
   <a href="https://github.com/zaydek/layout">github.com/zaydek/layout</a>

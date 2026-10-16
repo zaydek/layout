@@ -10,7 +10,9 @@
 ```text
 $kind:    user|feedback|project|reference|threads|idea
 $project: z|life|annotate|chippy
-$memory:  {$kind}_{$project}_$std:kebab_$std:date
+$slug:    [a-z0-9]+(-[a-z0-9]+)*
+$date:    \d{4}-\d{2}-\d{2}
+$memory:  {$kind}_{$project}_{$slug}_{$date}
 $code:    <=2,000
 
 memories/
@@ -20,7 +22,7 @@ memories/
   INDEX.md                               # One: a plain name is exactly one file
   memory.md                              # No cap given, so no cap
 src/
-  $std:kebab.ts $code                    # A hoisted cap
+  $slug.ts $code                         # A hoisted cap
 docs -> ../docs                          # A symlink
 ```
 
@@ -30,18 +32,16 @@ docs -> ../docs                          # A symlink
 - `$name` ends at the first character outside `[A-Za-z0-9_]`; write `{$name}` when a
   word character follows. `\$` is a literal dollar.
 - The same `$name` twice in one subtree matches the same text.
-- A trailing `<=2,000` or `$code` caps a file in lines; no cap means no cap. The
-  frozen block is `= path <=N`.
+- A trailing cap like `<=2,000` limits a file's lines, with `<`, `<=`, `>`, `>=` or
+  `==`; a hoist like `$code` names one. No cap means no limit.
 - Comments start at column 40 at least and wrap at 80, continuing under the first `#`.
 
 ## Commands
 
 ```sh
 layout .                   # Check this tree; exit 1 on drift
-layout fmt [file]          # Rewrite a contract to house style
-layout lint <file>         # Check a contract's own syntax
-layout freeze              # Freeze the files already over their caps
-layout render [file]       # Print a contract, or draw findings JSON
+layout lint                # Check the contract's own syntax
+layout format              # Rewrite the contract to house style
 ```
 
 ## Install
