@@ -3,7 +3,8 @@
 > layout checks a repo's tree against repo.layout, a contract that reads like a directory listing, and exits 1 on drift.
 
 - [Site](https://zaydek.github.io/layout/): the pitch, an example contract and check run, install, the grammar
-- [README](https://github.com/zaydek/layout/blob/main/README.md): the grammar, its standard library, and the commands
+- [This site as Markdown](https://zaydek.github.io/layout/index.md): the same page, for agents
+- [README](https://github.com/zaydek/layout/blob/main/README.md): the grammar and the commands
 
 ## Grammar
 
@@ -46,4 +47,7 @@ layout format              # Rewrite the contract to house style
 
 ## Install
 
-A plugin for Claude Code, Codex, OpenCode, oh-my-pi: coming soon.
+- Claude Code: coming soon
+- Codex: coming soon
+- OpenCode: coming soon
+- oh-my-pi: coming soon
