@@ -1,7 +1,8 @@
 # Lint findings
 
 `layout lint` prints `<contract>:<line>: <message>` for each finding, with its code. Errors stop
-`layout .` from running (exit 2); warnings are style only and never change an exit code. Most
+`layout .` from running (exit 2) and make `layout lint` exit 1; warnings are style only and change
+no exit code unless `layout lint --strict` asks. Most
 warnings are fixed by `layout format`.
 
 | Code | Level | What it means | Fix |
@@ -11,6 +12,7 @@ warnings are fixed by `layout format`.
 | `layout/unknown-ref` | error | An entry or hoist uses `$name` that is never defined | Define `$name:` at the top, or escape a literal dollar as `\$` |
 | `layout/ref-cycle` | error | Hoists refer to each other in a loop | Break the loop; a hoist may use only hoists that do not use it back |
 | `layout/indent` | error | Indentation that is not two spaces per level, or an entry indented under a file | Indent by two spaces, only under a folder line |
+| `layout/lines` | error | A cap that is not `<`, `<=`, `>`, `>=` or `==` and a number; a cap on a symlink; a cap hoist used anywhere but the end of a file entry | Write `<=2,000` or `$code` at the end of a file line; symlinks take no cap |
 | `layout/empty` | error | The contract has no entries | Add at least one entry |
 | `layout/unused-definition` | warning | A hoist no rule uses | Use it, or delete it |
 | `layout/number-commas` | warning | A cap of four digits or more without commas | Write `<=2,000`; `layout format` does |

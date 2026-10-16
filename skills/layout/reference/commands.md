@@ -2,8 +2,8 @@
 
 ```sh
 layout .                   # Check this tree against ./repo.layout
-layout lint                # Check the contract's own syntax and style
-layout format              # Rewrite the contract to house style, in place
+layout lint repo.layout    # Check the contract's own syntax and style
+layout format              # Rewrite ./repo.layout to house style, in place
 layout format --check      # Exit 1 if format would change the contract
 layout --version           # Print the version
 ```
@@ -22,9 +22,10 @@ layout never reads file contents except to count lines for a cap, and never prin
 
 ## layout lint
 
-Checks `repo.layout` itself: errors (a contract that cannot be read, a bad regex, an unknown or
+Checks a contract itself: errors (a contract that cannot be read, a bad regex, an unknown or
 cyclic hoist, bad indentation) and style warnings. `reference/lint.md` lists every finding and its
-fix. Warnings never change the exit code.
+fix. It exits 1 on an error; warnings change the exit code only under `--strict`. `layout .` also
+lints the contract it read and prints its warnings after the tree, without changing its exit code.
 
 ## layout format
 
@@ -47,7 +48,7 @@ wrap: 100                  # Where format wraps and lint measures: 80, 100 or 12
 | Code | Meaning |
 | ---- | ------- |
 | 0    | The tree matches (or lint found no error, or format had nothing to change) |
-| 1    | Drift, or `format --check` would change the file |
+| 1    | Drift; or lint found an error (or a warning under `--strict`); or `format --check` would change the file |
 | 2    | layout could not run: no contract, a broken contract, an unreadable tree, an unsupported system |
 
 Scripts and CI should branch on these codes, not on the text.

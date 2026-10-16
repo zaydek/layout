@@ -55,7 +55,7 @@ docs -> ../docs                        # A symlink
 
 ```sh
 layout .                   # Check this tree; exit 1 on drift
-layout lint                # Check the contract's own syntax
+layout lint repo.layout    # Check the contract's own syntax
 layout format              # Rewrite the contract to house style
 layout format --check      # Exit 1 if format would change it
 ```

@@ -19,14 +19,15 @@ start at once. After that first run it is also at `~/.local/share/layout/bin/lay
 
 ```sh
 <skill folder>/bin/layout .                # Check this tree; exit 1 on drift
-<skill folder>/bin/layout lint             # Check the contract's own syntax and style
+<skill folder>/bin/layout lint repo.layout # Check the contract's own syntax and style
 <skill folder>/bin/layout format           # Rewrite the contract to house style
 <skill folder>/bin/layout format --check   # Exit 1 if format would change it
 <skill folder>/bin/layout --version
 ```
 
-Exit codes are the API: 0 the tree matches, 1 drift (or `format --check` found a change), 2 layout
-could not run or the contract itself is broken. Lint warnings never change the exit code.
+Exit codes are the API: 0 the tree matches, 1 drift (or a lint error, or `format --check` found a
+change), 2 layout could not run or the contract it was given is broken. Lint warnings never change
+the exit code unless `lint --strict` asks.
 
 Run from the repository's top folder. The contract is `repo.layout` there; a `<name>.layout.config`
 beside it (for example `repo.layout.config`) holds format settings.
@@ -39,7 +40,7 @@ beside it (for example `repo.layout.config`) holds format settings.
    contents to explain them.
 3. Fix drift by moving the file to where the contract wants it, never by loosening the contract,
    unless the person asked for a new kind of file. Then add the narrowest rule that admits it, with
-   a comment saying why, and run `layout lint` and `layout format`.
+   a comment saying why, and run `layout lint repo.layout` and `layout format`.
 4. Never raise a cap to make a check pass without being asked; split the file instead.
 
 ## Reference
