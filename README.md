@@ -95,7 +95,7 @@ Exit codes: 0 the tree matches, 1 drift, 2 layout could not run or the contract 
 - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 - uses: zaydek/layout/.github/actions/layout@<commit sha>
   with:
-    version: 0.1.1
+    version: 0.1.2
 ```
 
 The action pins the version, checks the binary's sha256, caches it, and marks each

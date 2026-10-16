@@ -37,7 +37,7 @@ jobs:
           persist-credentials: false
       - uses: zaydek/layout/.github/actions/layout@<commit sha> # pin the commit of a release
         with:
-          version: 0.1.1
+          version: 0.1.2
 ```
 
 Inputs: `version` (required), `args` (default `.`), `working-directory`, `mark-findings` (default `true`:
@@ -54,7 +54,7 @@ Each fetches the pinned release, checks it against `SHA256SUMS` from the same re
 
 ```sh
 # Any POSIX runner with curl: pin the version, check the sum, run.
-V=0.1.1
+V=0.1.2
 case "$(uname -s)-$(uname -m)" in
   Linux-x86_64) T=linux-x64 ;; Linux-aarch64) T=linux-arm64 ;; Darwin-arm64) T=darwin-arm64 ;;
   *) echo "layout does not run on this system"; exit 2 ;;
@@ -83,7 +83,7 @@ pre-commit (`.pre-commit-config.yaml`):
 ```yaml
 repos:
   - repo: https://github.com/zaydek/layout
-    rev: v0.1.1
+    rev: v0.1.2
     hooks:
       - id: layout
 ```

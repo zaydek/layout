@@ -2,7 +2,9 @@
 
 layout runs entirely on your machine. It reads your repository's file and folder names, its
 contract (`repo.layout` and any `<name>.layout.config` beside it) and, for a cap, the line
-count of the files the contract caps. It never reads what else a file says.
+count of the files the contract caps. To list files it runs `git ls-files` in the repository
+(tracked plus untracked, minus ignored); outside a git repository it reads the folder itself. It
+never reads what else a file says.
 
 It stores nothing and sends nothing. The CLI makes no network requests: no telemetry, no
 analytics, no update checks.

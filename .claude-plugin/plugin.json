@@ -1,6 +1,6 @@
 {
   "name": "layout",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Checks a repo's file tree against repo.layout, a contract that reads like a directory listing, and teaches the agent to write contracts and fix drift.",
   "author": { "name": "Zaydek Michels-Gualtieri" },
   "homepage": "https://zaydek.github.io/layout/",
