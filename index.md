@@ -60,9 +60,9 @@ A plugin for your coding agent.
 
 ```text
 # Names: a regex or a cap, used below as $name
-$component: [A-Z][a-zA-Z0-9]*
-$hook:      use[A-Z][a-zA-Z0-9]*
-$code:      <=400
+$component: [A-Z][a-zA-Z0-9]*          # e.g. Button, UserCard
+$hook:      use[A-Z][a-zA-Z0-9]*       # e.g. useAuth, useTheme
+$code:      <=400                      # At most 400 lines
 
 # The tree: every entry this repo may hold
 README.md                              # One: a plain name is exactly one file
@@ -84,8 +84,8 @@ docs -> ../docs                        # A symlink
 
 ```text
 # Names: a regex or a cap, used below as $name
-$mod:  [a-z][a-z0-9_]*
-$code: <=800
+$mod:  [a-z][a-z0-9_]*                 # e.g. parser, http_client
+$code: <=800                           # At most 800 lines
 
 # The tree: every entry this repo may hold
 README.md                              # One: a plain name is exactly one file
@@ -103,10 +103,10 @@ src/                                   # The package, under src/
 
 ```text
 # Names: a regex or a cap, used below as $name
-$cmd:  [a-z][a-z0-9-]*
-$pkg:  [a-z][a-z0-9]*
-$file: [a-z][a-z0-9_]*
-$code: <=1,000
+$cmd:  [a-z][a-z0-9-]*                 # e.g. api, migrate-db
+$pkg:  [a-z][a-z0-9]*                  # e.g. auth, billing
+$file: [a-z][a-z0-9_]*                 # e.g. handler, user_store
+$code: <=1,000                         # At most 1,000 lines
 
 # The tree: every entry this repo may hold
 README.md
