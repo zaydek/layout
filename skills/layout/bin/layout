@@ -16,12 +16,15 @@
 #   LAYOUT_VERIFY   set to 1: re-hash a binary already here before running it (CI caches do)
 set -eu
 
-DEFAULT_VERSION=0.1.0
+DEFAULT_VERSION=0.1.1
 # version target sha256 (one line per released binary; append-only)
 SUMS='
 0.1.0 darwin-arm64 b5b654fa5bea0fdcdc3d16dad2b18dd492a03b04b8e87800af8933675f142187
 0.1.0 linux-x64 2c6b97798ad8db3c0f269bbc1e6b08c94b0fd9a35efe8ed7c9c6368bd55a5719
 0.1.0 linux-arm64 f88427ff2b59351613d3908c7dd01f9e4795217e1bbfc5c8ba12fc4b76ecb386
+0.1.1 darwin-arm64 3c4cfafd59ebbd76367038767cde940ddb660e1cdd9a17cfc8b6af56d370f744
+0.1.1 linux-x64 bc50394f646c75fef53b3abdbce3545181f495344e9f7a822a994b3c5304a747
+0.1.1 linux-arm64 37f4b4d8b54d52070a9a36171f2a5861f75887773a4e89769f360f55d4fd0ec8
 '
 
 die() { printf 'layout: %s\n' "$1" >&2; exit 2; }

@@ -70,7 +70,7 @@ Exit codes: 0 the tree matches, 1 drift, 2 layout could not run or the contract 
     fetch-depth: 0
 - uses: zaydek/layout/.github/actions/layout@<commit sha>
   with:
-    version: 0.1.0
+    version: 0.1.1
 ```
 
 The action pins the version, checks the binary's sha256, caches it, and marks each
