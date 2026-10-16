@@ -67,11 +67,13 @@ jobs:
         with:
           persist-credentials: false
       - run: |
-          sed -E 's/^(0\.1\.0 linux-x64 )[0-9a-f]{64}$/\1'"$(printf '0%.0s' $(seq 64))"'/' skills/layout/bin/layout > "$RUNNER_TEMP/tampered"
+          V=$(sed -n 's/^DEFAULT_VERSION=//p' skills/layout/bin/layout)
+          sed -E "s/^($V linux-x64 )[0-9a-f]{64}\$/\1$(printf '0%.0s' $(seq 64))/" skills/layout/bin/layout > "$RUNNER_TEMP/tampered"
+          if cmp -s skills/layout/bin/layout "$RUNNER_TEMP/tampered"; then echo "the table did not change"; exit 1; fi
           chmod +x "$RUNNER_TEMP/tampered"
           set +e; LAYOUT_HOME="$RUNNER_TEMP/t" "$RUNNER_TEMP/tampered" --version 2> err.txt; code=$?; set -e
           cat err.txt
-          [ "$code" = 2 ] && grep -q 'failed its checksum' err.txt && [ ! -e "$RUNNER_TEMP/t/0.1.0/layout" ]
+          [ "$code" = 2 ] && grep -q 'failed its checksum' err.txt && [ ! -e "$RUNNER_TEMP/t/$V/layout" ]
 
   hooks:
     name: hooks
