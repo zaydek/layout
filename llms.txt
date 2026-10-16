@@ -46,5 +46,5 @@ layout format --check      # Exit 1 if format would change it
 
 - Claude Code: `claude plugin marketplace add zaydek/layout && claude plugin install layout@layout`
 - Codex: `codex plugin marketplace add zaydek/layout && codex plugin add layout@layout`
-- OpenCode: coming soon
+- OpenCode: `mkdir -p ~/.config/opencode/skills && curl -fsSL https://github.com/zaydek/layout/archive/refs/heads/main.tar.gz | tar -xz -C ~/.config/opencode/skills --strip-components=2 layout-main/skills/layout`
 - omp (oh-my-pi): `omp plugin marketplace add zaydek/layout && omp plugin install layout@layout`
